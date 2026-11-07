@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#11192b"><title>The Pilgrim's Progress — The Narrow Way · Version 11 · Story Mode</title>
+<style>
+:root{--bg:#101827;--panel:#1d2b40;--line:#607a90;--gold:#f5d071;--cream:#f5efd6;--muted:#bdd0d9;--blue:#79c5ed}*{box-sizing:border-box}html,body{margin:0;background:radial-gradient(ellipse at 50% 0%,#273b52,#0e1421 70%);color:var(--cream);font-family:ui-monospace,Consolas,'Courier New',monospace}body{padding:14px 12px 32px}.container{width:min(100%,860px);margin:auto}.mast{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:5px 0 12px}.brand small{font-size:10px;letter-spacing:3px;color:#b1c9ce;font-weight:900}.brand h1{font-size:clamp(19px,4vw,28px);line-height:1.12;letter-spacing:1px;color:var(--gold);margin:4px 0;text-shadow:2px 2px #5b382b}.brand p{font-size:12px;color:#c7d2dd;margin:4px 0}.top-controls{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}button{font:700 13px ui-monospace,Consolas,monospace;border:2px solid #6a8da0;border-bottom-color:#35495c;border-right-color:#35495c;border-radius:5px;color:#fff2c7;background:#263d55;padding:8px 10px;cursor:pointer;touch-action:manipulation}button:hover,button:focus-visible{outline:2px solid #edcd7f;outline-offset:1px;background:#3a536b}button:active{transform:translateY(1px)}.canvas-holder{position:relative;border:4px solid #b3a273;box-shadow:0 0 0 4px #1c2d3e,0 12px 35px #090e18;border-radius:2px;overflow:hidden;background:#171d2e}canvas{display:block;width:100%;height:auto;image-rendering:pixelated;image-rendering:crisp-edges;touch-action:none}#dialog{position:absolute;inset:auto 10px 10px 10px;min-height:125px;background:rgba(11,19,32,.97);border:3px solid #ead69c;box-shadow:0 0 0 3px #333c51;padding:11px 14px 12px;display:none;max-height:79%;overflow-y:auto}#dialog.visible{display:block}.speaker{font-weight:900;color:#ffe18e;letter-spacing:1px;font-size:14px;margin-bottom:7px}.dialog-text{font-family:Georgia,serif;font-size:clamp(13px,2.15vw,17px);line-height:1.3;white-space:pre-line}.choices{display:grid;gap:5px;margin-top:10px}.choice{background:#273d57;border:1px solid #9aafaf;color:#fff9e7;text-align:left;font-size:clamp(12px,1.7vw,14px);padding:8px 9px;line-height:1.3;white-space:normal}.choice strong{color:#fcd98a}.dialog-foot{display:flex;justify-content:space-between;align-items:center;color:#afc3d0;font-size:11px;margin-top:8px;gap:8px}.continue{padding:7px 17px;background:#6c553b;border-color:#efcd80}.notice{font-size:12px;color:#f4b2a5;margin-top:7px;line-height:1.4;min-height:0}.notice.ok{color:#9be2ad}.lower{display:grid;grid-template-columns:1.25fr 1fr;gap:10px;margin-top:13px}.panel{background:rgba(29,43,64,.92);border:2px solid #53697c;padding:12px;border-radius:3px;min-height:88px}.section-title{font-size:11px;letter-spacing:2px;color:var(--gold);font-weight:900;margin-bottom:8px}.panel p{font-size:13px;line-height:1.5;margin:3px 0;color:#e5ebf0}.panel .meta{color:#bdd0d9}.controls-help{font-size:12px;color:#cbd6dd;margin:12px 0 8px;line-height:1.6}.touch{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:8px auto 0;max-width:700px;user-select:none;-webkit-user-select:none}.dpad{display:grid;grid-template-columns:repeat(3,58px);grid-template-rows:repeat(3,48px);gap:3px}.pad,.act{touch-action:none;font-size:22px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px #121b27;border:2px solid #738899;border-radius:7px;background:#2b455d;user-select:none}.dpad .blank{visibility:hidden}.pad:active,.pad.pressed,.act:active,.act.pressed{background:#57758a;transform:translateY(2px)}.face-buttons{display:flex;align-items:center;gap:12px}.act{border-radius:50%;height:64px;width:64px;background:#8a3b45;border-color:#d18c82;color:#fff7de;font-weight:900;font-size:18px}.act.secondary{height:48px;width:48px;font-size:13px;background:#3f4d70;border-color:#9f9dbf}.footer{font-size:11px;color:#a7b6c7;line-height:1.5;margin:18px auto;max-width:800px;text-align:center}.screen-menu{position:absolute;inset:0;display:none;overflow-y:auto;background:rgba(8,15,28,.97);padding:18px 20px;z-index:4}.screen-menu.visible{display:block}.screen-menu h2{color:var(--gold);font-size:20px;margin:2px 0 13px}.screen-menu .menugrid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.map-btn{display:flex;flex-direction:column;align-items:start;gap:4px;text-align:left;padding:11px;font-size:13px}.map-btn span{font-size:11px;color:#b9c7d1;font-weight:400}.map-btn:disabled{opacity:.38;cursor:not-allowed}.menu-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.menu-caption{font-size:12px;line-height:1.5;color:#e1e6eb}.tiny{font-size:11px;color:#c2cad3;margin-top:7px}.statuspill{background:#192639;color:#f4d98b;padding:7px 9px;display:inline-block;font-size:11px;border:1px solid #53697c}@media(max-width:600px){body{padding:8px 6px 20px}.mast{align-items:flex-start}.brand small{letter-spacing:1px;font-size:9px}.brand p{display:none}.top-controls button{font-size:10px;padding:7px}.canvas-holder{border-width:2px}#dialog{inset:auto 4px 4px 4px;padding:8px;max-height:91%;min-height:0}.speaker{font-size:12px;margin-bottom:5px}.dialog-text{font-size:12px}.choice{font-size:12px;padding:6px}.dialog-foot{margin-top:5px}.lower{grid-template-columns:1fr;gap:6px}.panel{padding:8px;min-height:0}.panel p{font-size:12px}.touch{padding:0 12px}.dpad{grid-template-columns:repeat(3,51px);grid-template-rows:repeat(3,43px)}.act{height:58px;width:58px}.act.secondary{height:45px;width:45px}.screen-menu{padding:12px}.screen-menu .menugrid{grid-template-columns:1fr}}
+
+.truth-entry{border:1px solid #556b7a;background:#21354a;padding:9px 10px;margin:6px 0;border-left:4px solid #dabb78}.truth-entry strong{display:block;font-size:13px;color:#fae4b3}.truth-entry span{font-size:11px;color:#a8d9e8}.truth-entry p{font-family:Georgia,serif;font-size:13px;color:#ede9d8;line-height:1.4;margin:4px 0 1px}
+#dialog .choices .choice:active{background:#516b78}
+@media(max-width:600px){.container{display:flex;flex-direction:column}.mast{order:0}.canvas-holder{order:1}.touch{order:2}.lower{order:3}.controls-help{order:4}.footer{order:5}#dialog{position:relative;inset:auto;max-height:none;overflow:visible;border-left:0;border-right:0;border-bottom:0;box-shadow:none;padding:12px;background:#111b2c}.dialog-text{font-size:14px;line-height:1.4}.choice{font-size:13px;padding:10px 9px;min-height:43px}.dialog-foot{font-size:11px}.top-controls{gap:4px} .touch{padding:4px 10px 0}}
+@media(max-width:420px){.brand h1{font-size:19px}.brand small{font-size:8px}.dpad{grid-template-columns:repeat(3,48px);grid-template-rows:repeat(3,46px);gap:3px}.act{height:59px;width:59px}.face-buttons{gap:10px}}
+
+.combat-sword{background:#a15a43;border-color:#f6cc8c;width:64px;height:64px;font-size:11px}
+.combat-shield{background:#3d7383;border-color:#9bdded;width:64px;height:64px;font-size:10px}
+.combat-shield.pressed{background:#69a6b6}
+@media(max-width:600px){.face-buttons{gap:6px;flex-wrap:wrap;justify-content:flex-end}.act.combat-sword,.act.combat-shield{width:53px;height:53px;font-size:9px}.touch{gap:5px}}
+@media(max-width:420px){.face-buttons{max-width:140px}.act.combat-sword,.act.combat-shield{width:54px;height:43px}.touch{padding:2px 4px}.dpad{grid-template-columns:repeat(3,46px)}}
+</style></head>
+<body><main class="container">
+<header class="mast"><div class="brand"><small>8-BIT BUNYAN · VERSION 11 · STORY MODE</small><h1>THE NARROW WAY</h1><p>The Pilgrim's Progress · Nine maps · Story progression</p></div><div class="top-controls"><button id="mapsBtn" title="Travel journal / unlocked maps">☷ MAPS</button><button id="journalBtn" title="Inventory and notes">▤ BOOK</button><button id="muteBtn" title="Toggle sound">♫ ON</button></div></header>
+<div class="canvas-holder"><canvas id="game" width="768" height="512" aria-label="Top-down pixel art game. Use directional keys to move and Space to interact." tabindex="0"></canvas><section id="dialog" aria-live="polite"><div id="speaker" class="speaker"></div><div id="dialogText" class="dialog-text"></div><div id="notice" class="notice"></div><div id="choices" class="choices"></div><div class="dialog-foot"><span id="dialogHint"></span><button id="continueBtn" class="continue">CONTINUE ▸</button></div></section><div id="menu" class="screen-menu" aria-live="polite"></div></div>
+<div class="lower"><section class="panel"><div class="section-title">CURRENT QUEST</div><p id="objective"></p></section><section class="panel"><div class="section-title">PILGRIM'S JOURNAL</div><p id="progress"></p></section></div>
+<p class="controls-help">⌨ <b>Move:</b> arrows / WASD &nbsp; <b>Interact:</b> Space / Enter / A &nbsp; <b>Answer:</b> 1–3 or tap &nbsp; <b>Truth Journal:</b> J &nbsp; <b>Map menu:</b> M. Follow the city road east to the fields, then meet those pursuing Christian outside the walls. In Map 3 return from Sinai to the EAST road. In Map 4 cross the castle road, read the inscription, and knock three times. In Map 5, move EAST through three galleries of the Interpreter’s House. In Map 7, climb NORTH, and return SOUTH when the sealed roll is missing. In Map 8, heed Watchful, speak with the palace household, and receive the armor. In Map 9: X / K / B = sword; hold SHIFT = shield. On iPhone use SWORD and hold SHIELD.</p>
+<div class="touch" aria-label="Touch game controls"><div class="dpad"><span class="blank"></span><button class="pad" data-move="0,-1" aria-label="Move up">▲</button><span class="blank"></span><button class="pad" data-move="-1,0" aria-label="Move left">◀</button><button class="pad" data-move="0,1" aria-label="Move down">▼</button><button class="pad" data-move="1,0" aria-label="Move right">▶</button><span class="blank"></span><span class="blank"></span><span class="blank"></span></div><div class="face-buttons"><button id="bookTouch" class="act secondary" aria-label="Book / journal">J</button><button id="actionTouch" class="act" aria-label="Interact">A</button><button id="swordTouch" class="act combat-sword" aria-label="Sword attack">SWORD</button><button id="shieldTouch" class="act combat-shield" aria-label="Hold shield">SHIELD</button></div></div>
+<footer class="footer">Inspired by John Bunyan's <em>The Pilgrim's Progress</em> (1678). Original, single-file retro graphics and original gameplay. Dialogue is an educational adaptation of Bunyan, not a verbatim transcript; playable hazards and dialogue choices are original additions. Sound choices do not force another character to believe. Your progress saves on this device when browser storage is available. Story Mode contains no skip-ahead previews.</footer>
+</main>
+<script>
+(()=>{'use strict';
+const cv=document.querySelector('#game'),g=cv.getContext('2d');g.imageSmoothingEnabled=false;
+const T=32,W=24,H=14,Y=64,KEY='narrow_way_pilgrim_v11';
+const names=['CITY OF DESTRUCTION','SLOUGH OF DESPOND','THE ROAD TO MORALITY','THE WICKET GATE','HOUSE OF THE INTERPRETER','THE CROSS & SEPULCHRE','HILL DIFFICULTY','PALACE BEAUTIFUL','VALLEY OF HUMILIATION'];
+const descriptions=['Reason with the family, meet Evangelist in the fields, and respond to Obstinate and Pliable when they pursue you on the road.','Struggle across the mire after Pliable flees; Help draws Christian out at the far bank.','Explore the crossroads, Morality road, and fiery Mount Sinai. Recognize Worldly Wiseman’s false promise and return by Evangelist’s counsel.','Pass Beelzebub’s castle, read the inscription, knock three times, enter by Good-will, and learn the narrow way within.','Seven lessons in Bunyan’s order, from the portrait through the judgment dream.','Travel between the walls called Salvation, lose your burden at the Cross, receive the gifts, and warn the three sleeping men.','Speak with Formalist and Hypocrisy, choose the difficult road, lose your roll at the arbor, meet Timorous and Mistrust, and find your roll again.','Pass safely between the chained lions, meet Watchful, answer Discretion, Piety, Prudence, and Charity, behold the treasures of the house, and receive the whole armor of God.','Descend into the valley, stand against Apollyon, defend with sword and shield, recover the lost sword, and overcome by the Word of God.'];
+const initial=()=>({map:0,cityZone:0,moralityZone:0,gateZone:0,interpreterZone:0,hillZone:0,palaceZone:0,valleyZone:0,battlePhase:"ready",hp:9,bossHp:12,battleAttempts:0,knocks:0,x:3,y:7,face:'right',flags:{},lessons:0,errors:0,unlocked:0,finished:false,steps:0});
+// Story Mode: preserve genuine earlier progress while retiring preview-only unlocks.
+const STORY_COMPLETIONS=[
+ ['book','wife_3','child_2','evangelist_2','obstinate_3','pliable_2'],
+ ['sloughSunk','sloughFarBank','help','sloughCrossed'],
+ ['worldly_3','moralityRent','moralityLegality','moralityCivility','sinai','correction_1','correction_2','correction_3','correction_4','corrected'],
+ ['gateInscription','gateKnock','gateEntry','gateTalk_1','gateTalk_2','gateTalk_3','gateTalk_4','gateTalk_5'],
+ ['portrait','dust','patience','fire','valiant','cage','dream','interpreter'],
+ ['cross','angel1','angel2','angel3','simpleWarn','slothWarn','presumptionWarn'],
+ ['hillForm1','hillForm2','hillHyp1','hillSpring','hillFork','hillSleep','hillTimorous','hillMistrust','hillMissing','hillRepent','hillRecovered','hillReturn','hillComplete'],
+ ['watchfulLion','lionsPassed','watchful1','discretion','piety','prudence','charity','palaceTreasures','palaceArmor','palaceComplete']
+];
+const LATER_MAP_FLAGS=[
+ [],
+ ['sloughSunk','sloughFarBank','help','sloughCrossed'],
+ ['worldly_1','worldly_2','worldly_3','moralityRent','moralityLegality','moralityCivility','sinai','correction_1','correction_2','correction_3','correction_4','corrected'],
+ ['gateInscription','gateKnock','gateEntry','gateTalk_1','gateTalk_2','gateTalk_3','gateTalk_4','gateTalk_5'],
+ ['portrait','dust','patience','fire','valiant','cage','dream','interpreter'],
+ ['cross','angel1','angel2','angel3','simpleWarn','slothWarn','presumptionWarn'],
+ ['hillForm1','hillForm2','hillHyp1','hillSpring','hillFork','hillSleep','hillTimorous','hillMistrust','hillMissing','hillRepent','hillRecovered','hillReturn','hillComplete'],
+ ['watchfulLion','lionsPassed','watchful1','discretion','piety','prudence','charity','palaceTreasures','palaceArmor','palaceComplete'],
+ ['valleyDescent','apollyon_1','apollyon_2','apollyon_3','apollyonSword','apollyonVictory','valleyHealing','valleyThanks']
+];
+function earnedStoryMax(flags){let n=0;for(const stage of STORY_COMPLETIONS){if(!stage.every(k=>!!flags[k]))break;n++;}return Math.min(8,n);}
+function sanitizeImportedStory(state){
+ const cap=earnedStoryMax(state.flags);state.unlocked=Math.min(cap,Math.max(0,Number(state.unlocked)||0));
+ if(state.map>state.unlocked){state.map=state.unlocked;state.x=state.map===0?3:1;state.y=7;state.face='right';
+  state.cityZone=0;state.moralityZone=0;state.gateZone=0;state.interpreterZone=0;state.hillZone=0;state.palaceZone=0;state.valleyZone=0;
+  state.hp=9;state.bossHp=12;state.battlePhase='ready';state.finished=false;
+ }
+ for(let area=state.unlocked+1;area<LATER_MAP_FLAGS.length;area++)for(const key of LATER_MAP_FLAGS[area])delete state.flags[key];
+ if(state.unlocked<8){state.finished=false;state.battlePhase='ready';state.hp=9;state.bossHp=12;}
+ return state;
+}
+let s=initial();try{
+ let raw=localStorage.getItem(KEY),fromPrevious=false;
+ if(!raw){raw=localStorage.getItem('narrow_way_pilgrim_v10');fromPrevious=!!raw;}
+ if(raw){let v=JSON.parse(raw);if(Number.isInteger(v.map)&&v.map>=0&&v.map<9){
+   s={...initial(),...v,flags:v.flags||{}};
+   s.x=Math.min(W-2,Math.max(1,s.x));s.y=Math.min(H-2,Math.max(1,s.y));s.cityZone=Math.max(0,Math.min(3,Number(s.cityZone)||0));
+   s.moralityZone=Math.max(0,Math.min(2,Number(s.moralityZone)||0));
+   s.gateZone=Math.max(0,Math.min(2,Number(s.gateZone)||0));s.interpreterZone=Math.max(0,Math.min(2,Number(s.interpreterZone)||0));s.hillZone=Math.max(0,Math.min(3,Number(s.hillZone)||0));s.palaceZone=Math.max(0,Math.min(3,Number(s.palaceZone)||0));s.valleyZone=Math.max(0,Math.min(2,Number(s.valleyZone)||0));s.knocks=Math.max(0,Math.min(3,Number(s.knocks)||0));
+   if(fromPrevious)sanitizeImportedStory(s);
+ }}
+}catch(e){}
+let dialog=null,menu=false,muted=false,lastMove=0,press={up:false,down:false,left:false,right:false},soundCtx=null,frame=0,flash=0,showIntro=true;
+const $=id=>document.getElementById(id),clamp=(n,a,b)=>Math.max(a,Math.min(n,b));
+function save(){try{localStorage.setItem(KEY,JSON.stringify(s));}catch(e){}}
+function tone(hz=430,dur=.075,vol=.035){if(muted)return;try{soundCtx ||= new (window.AudioContext||window.webkitAudioContext)();let osc=soundCtx.createOscillator(),gain=soundCtx.createGain();osc.type='square';osc.frequency.value=hz;gain.gain.value=vol;osc.connect(gain);gain.connect(soundCtx.destination);osc.start();gain.gain.exponentialRampToValueAtTime(.001,soundCtx.currentTime+dur);osc.stop(soundCtx.currentTime+dur);}catch(e){}}
+function flag(k){return !!s.flags[k]}
+function learn(k){if(!flag(k)){s.flags[k]=true;s.lessons++;tone(660,.09);setTimeout(()=>tone(880,.12),95);save();updateHUD()}}
+function show(speaker,text,after=null){dialog={type:'message',speaker,text,after};refreshDialog();tone(395,.055)}
+function refreshDialog(){let el=$('dialog');el.classList.toggle('visible',!!dialog);if(!dialog)return;$('speaker').textContent=dialog.speaker;$('dialogText').textContent=dialog.text;$('notice').textContent=dialog.feedback||'';$('notice').className='notice'+(dialog.feedback&&dialog.feedback.startsWith('✓')?' ok':'');let choices=$('choices');choices.replaceChildren();if(dialog.type==='quiz'){for(let i=0;i<dialog.answers.length;i++){let b=document.createElement('button');b.className='choice';b.innerHTML='<strong>'+(i+1)+'.</strong> '+escapeHtml(dialog.answers[i].label);b.addEventListener('click',()=>choose(i));choices.appendChild(b);}$('continueBtn').style.display='none';$('dialogHint').textContent='Choose 1–3 or tap an answer';}else{$('continueBtn').style.display='';$('dialogHint').textContent='Space / Enter / A to continue';}}
+function escapeHtml(a){return String(a).replace(/[&<>\"']/g,x=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[x]));}
+function choose(i){if(!dialog||dialog.type!=='quiz'||!dialog.answers[i])return;let a=dialog.answers[i];if(!a.right){s.errors++;save();dialog.feedback='Not quite. '+a.why+' Choose again.';tone(180,.16);refreshDialog();return;}let d=dialog;learn(d.id);
+if(typeof d.after==='function'){let onDone=d.after;show(d.speaker,'✓ '+d.success,onDone);}else show(d.speaker,'✓ '+d.success);
+}
+function makeQuestion(id,speaker,prompt,options,result,after=null){if(flag(id)){show(speaker,result);return;}const rightPositions={wife_1:2,wife_2:1,wife_3:0,child_1:1,child_2:2,neighbor_1:0,neighbor_2:2,obstinate_1:1,obstinate_2:2,obstinate_3:0,merchant_1:2,merchant_2:0,pliable_1:1,pliable_2:2,evangelist_1:0,evangelist_2:1,help:2,corrected:1,gateEntry:2,gateTalk_1:0,gateTalk_2:2,gateTalk_3:1,gateTalk_4:0,gateTalk_5:2,gate:2,portrait:0,dust:1,fire:0,patience:2,valiant:1,cage:1,dream:2,hillForm1:1,hillForm2:0,hillHyp1:2,hillFork:1,hillTimorous:0,hillMistrust:2,hillRepent:1,hillRecovered:2};const ordered=[...options];for(let i=0;i<(rightPositions[id]??1);i++)ordered.unshift(ordered.pop());dialog={type:'quiz',id,speaker,text:prompt,answers:ordered.map(o=>({label:o[0],right:o[1],why:o[2]||'That is not the teaching of the Book.'})),success:result,after,feedback:''};refreshDialog();}
+function cont(){if(menu){closeMenu();return;}if(!dialog)return;let d=dialog;if(d.type!=='message')return;dialog=null;refreshDialog();if(d.after)d.after();if(isArena()&&flag('apollyon_3')&&s.battlePhase==='ready'&&!dialog)beginBattle();updateHUD();}
+$('continueBtn').addEventListener('click',cont);
+function eventOnce(name,speaker,text){if(!flag(name)){learn(name);show(speaker,text)}}
+const cityZones=['HOME QUARTER','CITY MARKET','EVANGELIST’S FIELD','PURSUIT ROAD'];
+const moralityZones=['THE CROSSROADS','THE ROAD TO MORALITY','MOUNT SINAI'];
+const gateZones=['CASTLE ROAD','THE WICKET GATE','THE NARROW WAY'];
+const interpreterZones=['ENTRY HALL','INNER GALLERY','EASTERN CHAMBER'];
+const hillZones=['THE TWO STRANGERS','THE THREE ROADS','THE HILLSIDE ARBOR','THE HILLTOP'];
+const palaceZones=['THE CHAINED LIONS','WATCHFUL THE PORTER','THE DAMSELS OF THE HOUSE','THE TREASURY & ARMORY'];
+const valleyZones=['THE STEEP DESCENT','APOLLYON’S BATTLEFIELD','THE HEALING PLACE'];
+const palaceLadiesDone=()=>['discretion','piety','prudence','charity'].every(flag);
+const hillDebateDone=()=>['hillForm1','hillForm2','hillHyp1'].every(flag);
+const hillWarningsDone=()=>flag('hillTimorous')&&flag('hillMistrust');
+const interpreterLessons=['portrait','dust','patience','fire','valiant','cage','dream'];
+const allInterpreterLessons=()=>interpreterLessons.every(flag);
+const interpreterCount=()=>interpreterLessons.filter(flag).length;
+const truths=[
+ ['book','Judgment is real','Hebrews 9:27','Sin and judgment must be faced, not ignored.'],
+ ['wife_1','The need of salvation','Romans 3:23','Our common need of mercy is not disproved by the comforts of home.'],
+ ['wife_2','Examine the testimony','Acts 17:11','A troubling claim is not false merely because it is troubling.'],
+ ['wife_3','Love tells the truth','Ephesians 4:15','Love calls us to speak truth, even when it may be rejected.'],
+ ['child_1','The value of the soul','Mark 8:36','Earthly gain cannot compensate for losing the soul.'],
+ ['child_2','The cost of discipleship','Luke 9:23','A true promise does not guarantee an easy journey.'],
+ ['neighbor_1','No boasting before others','Romans 3:23','Warning others is not a claim to be morally superior.'],
+ ['neighbor_2','Do not presume on tomorrow','James 4:14','Our life is uncertain; we should not indefinitely put off truth.'],
+ ['obstinate_1','Unseen does not mean unreal','2 Corinthians 4:18','The question is whether the Book speaks truth about unseen things.'],
+ ['obstinate_2','The majority is not the measure','Matthew 7:13–14','A crowd can take the broad road; numbers cannot establish truth.'],
+ ['obstinate_3','Mockery is not refutation','1 Peter 3:15','A serious claim deserves a reasoned answer rather than ridicule.'],
+ ['merchant_1','Gold cannot ransom the soul','Psalm 49:7–8','Wealth cannot pay the price of deliverance from sin.'],
+ ['merchant_2','The world is not the highest good','Mark 8:36','Profitable business cannot outrank the soul’s final good.'],
+ ['pliable_1','The promise of an inheritance','1 Peter 1:4','The Book describes an inheritance that cannot perish.'],
+ ['pliable_2','Hope must endure testing','Luke 9:23','Truth is not measured by how comfortably we can follow it.'],
+ ['evangelist_1','Enter by the narrow gate','Matthew 7:13–14','The appointed way is not self-justification or the broad path.'],
+ ['evangelist_2','Follow the light','Psalm 119:105','The Word directs Christian toward the next step of his pilgrimage.'],
+ ['help','Help for the sinking pilgrim','Psalm 40:2','Christian does not climb out of the Slough by pride. Help lifts him onto the appointed way.'],
+ ['sloughCrossed','The appointed footing','Psalm 18:36','The safe way through despond is narrow and provided; Christian must keep to it.'],
+ ['worldly_1','The burden of guilt','Romans 3:23','Christian seeks actual deliverance from sin, not merely a quiet conscience.'],
+ ['worldly_2','The seduction of ease','Luke 9:23','A more comfortable road does not prove that it is the true way.'],
+ ['worldly_3','The apparent shortcut','Matthew 7:14','Christian is enticed by Legality’s reputed skill and Morality’s comforts.'],
+ ['moralityRent','The promise of prosperity','Mark 8:36','Comfort, status, and good neighbors cannot purchase forgiveness.'],
+ ['moralityLegality','A moral reputation cannot justify','Romans 3:20','Legality’s promise is that outward obedience will free the burdened soul.'],
+ ['moralityCivility','Civil behavior is not pardon','Galatians 2:16','Politeness and moral reform are not the ground of justification.'],
+ ['correction_1','Turning from the appointed way','Luke 13:24','Worldly Wiseman persuaded Christian to leave the way Evangelist had shown.'],
+ ['correction_2','The offense of the Cross','Galatians 6:12','The shortcut encourages Christian to evade the Cross and its suffering.'],
+ ['correction_3','Sinai and bondage','Galatians 4:24–26','Bunyan uses Mount Sinai as an emblem of bondage under the law relied on for justification.'],
+ ['correction_4','The holy law and its limit','Romans 3:20','The law reveals the knowledge of sin, but obedience cannot remove guilt or earn justification.'],
+ ['corrected','Mercy and return','John 20:27','Evangelist warns Christian, then encourages him that Good-will will receive a repentant pilgrim.'],
+ ['gateInscription','Knock, and it shall be opened','Matthew 7:7–8','The inscription invites a needy pilgrim to seek admission instead of turning away.'],
+ ['gateKnock','Persevering in petition','Luke 11:9–10','Christian knocks repeatedly, acknowledging his need of mercy.'],
+ ['gateEntry','Good-will receives the burdened','John 6:37','The gate opens to the burdened pilgrim, not to one boasting of merit.'],
+ ['gateTalk_1','Evangelist directed the pilgrim','Psalm 119:105','Christian came because Evangelist directed him to the Wicket Gate.'],
+ ['gateTalk_2','The sorrow of those who remain','Luke 14:26','Christian urged his family and neighbors to come, but they would not accompany him.'],
+ ['gateTalk_3','Perseverance through difficulty','Matthew 13:20–21','Pliable followed for a little while but turned back at the Slough.'],
+ ['gateTalk_4','Confession of a wrong turning','1 John 1:9','Christian does not boast over Pliable; he admits his own detour under Worldly Wiseman.'],
+ ['gateTalk_5','The straight and narrow way','Matthew 7:13–14','Good-will shows the true way and directs Christian toward the Interpreter.'],
+ ['portrait','The grave picture of a minister','2 Timothy 4:2','A faithful minister speaks truth plainly, has heaven in his eye, and the law of truth in his lips.'],
+ ['dust','The Law and the Gospel','Romans 3:20','The law stirs up the dust of sin, but the Gospel brings cleansing.'],
+ ['patience','Better things to come','2 Corinthians 4:18','The pilgrim waits for a lasting inheritance rather than demanding everything at once.'],
+ ['fire','Hidden sustaining grace','Philippians 1:6','Christ secretly sustains the fire of grace despite Satan’s opposition.'],
+ ['valiant','The kingdom through conflict','Matthew 11:12','The valiant man presses through fear and opposition to enter the palace of glory.'],
+ ['cage','Do not harden the heart','Hebrews 3:12–13','The iron cage warns against presumption and a heart hardened by sin.'],
+ ['dream','Remember the coming judgment','2 Corinthians 5:10','The awakened man trembles because he remembers the day when secrets are revealed.'],
+ ['interpreter','Profit by the things shown','Luke 8:18','The Interpreter’s lessons are to be remembered on the road and not merely admired.'],
+ ['simpleWarn','Simple refuses to heed danger','Proverbs 22:3','Simple replies that he sees no danger, refusing Christian’s offer to help loose the irons.'],
+ ['slothWarn','Sloth chooses more sleep','Proverbs 6:6–11','Sloth refuses to wake when warned of danger.'],
+ ['presumptionWarn','Presumption rejects warning','1 Peter 5:8','Presumption relies on himself despite the warning of the roaring lion.'],
+ ['hillForm1','Enter by the appointed door','John 10:1','Formalist and Hypocrisy have climbed over the wall instead of entering at the wicket gate.'],
+ ['hillForm2','A gift, not a borrowed disguise','Galatians 2:16','Christian’s new garment, mark, and sealed roll were given to him: mere outward conformity cannot replace them.'],
+ ['hillHyp1','Custom does not outrank God’s command','Mark 7:8','An ancient custom cannot justify taking a shortcut forbidden by the Lord of the way.'],
+ ['hillSpring','Refreshment at the fountain','Isaiah 49:10','At the foot of Hill Difficulty Christian drinks from the spring before climbing.'],
+ ['hillFork','Three ways, only one to life','Matthew 7:14','Danger leads into the woods, Destruction toward dark mountains, and Difficulty ascends the narrow way.'],
+ ['hillSleep','The danger of careless slumber','Proverbs 6:6','In the arbor Christian rests too long, falls asleep, and unknowingly lets the sealed roll fall.'],
+ ['hillTimorous','Fear of what lies ahead','Psalm 27:1','Timorous returns from the hilltop in fear of increasing dangers.'],
+ ['hillMistrust','The lions ahead','Hebrews 10:39','Mistrust warns Christian of lions; Christian chooses not to draw back from the way of life.'],
+ ['hillMissing','The missing roll','Revelation 2:4–5','Christian discovers that his sealed roll has gone missing after his careless sleep.'],
+ ['hillRepent','Return and seek what was lost','1 Thessalonians 5:6','Christian recognizes his fault, asks forgiveness, and turns back rather than pretending the roll is safe.'],
+ ['hillRecovered','The roll found beneath the settle','Psalm 119:176','Christian returns to the arbor and finds his sealed roll underneath the seat.'],
+ ['hillReturn','The ascent in the dark','Psalm 119:105','Having found the roll, Christian climbs again as dusk falls, mindful of the lions.'],
+ ['hillComplete','The palace comes into view','Hebrews 11:13','Christian sees Palace Beautiful ahead, with the lions waiting beside the narrow passage.'],
+ ['watchfulLion','The lions are chained','Psalm 91:13','The lions are dreadful, yet chained. Christian must walk in the middle of the path by faith, not turn back in fear.'],
+ ['watchful1','Watchful receives the pilgrim','Hebrews 13:2','The porter receives Christian kindly and discerns whether he is a true pilgrim.'],
+ ['discretion','Discretion hears Christian’s story','Psalm 119:59','Christian recounts his journey, the burden, and the mercy that met him on the way.'],
+ ['piety','Piety asks what moved the pilgrimage','Acts 16:30','The terror of judgment and the promise of life moved Christian to flee to Christ.'],
+ ['prudence','Prudence questions Christian’s inward life','Philippians 3:20','Christian’s thoughts are drawn heavenward even while he walks on earth.'],
+ ['charity','Charity asks about Christian’s family','Luke 14:26','Christian desired his family’s good, but they refused to come with him.'],
+ ['palaceTreasures','Treasures of the King','Ephesians 6:17','The house shows memorials of mighty deeds and the riches laid up for those who fight the good fight.'],
+ ['palaceArmor','The whole armor of God','Ephesians 6:11','Before the valley below, Christian is armed from head to foot for battle with Apollyon.'],
+ ['valleyDescent','Humility and readiness','1 Peter 5:6','Christian descends with his whole armor, knowing that courage is no ground for boasting.'],
+ ['apollyon_1','A new Lord and Master','Romans 6:22','Christian refuses Apollyon’s claim, confessing that he now serves the King of the Celestial City.'],
+ ['apollyon_2','Mercy against accusation','1 John 1:9','Christian admits his failings but trusts the pardon and mercy of his Prince.'],
+ ['apollyon_3','No armor for the back','Ephesians 6:13','Christian stands his ground: he has no armor for fleeing and turning his back.'],
+ ['apollyonSword','When I fall I shall arise','Micah 7:8','Even when brought low, Christian recovers the sword of the Spirit and rises.'],
+ ['apollyonVictory','More than conquerors','Romans 8:37','Christian’s victory is through Him who loved him, not through the pilgrim’s independent strength.'],
+ ['valleyHealing','Leaves of the tree of life','Revelation 22:2','Leaves are given to heal Christian’s wounds after the battle.'],
+ ['valleyThanks','Thanks for deliverance','Psalm 18:2','Christian gives thanks to God for deliverance and goes on with sword in hand.']
+];
+function cityFinished(){return ['wife_3','child_2','evangelist_2','obstinate_3','pliable_2'].every(flag)}
+function cityCompleteCount(){return ['wife_3','child_2','evangelist_2','obstinate_3','pliable_2'].filter(flag).length}
+function objectives(){switch(s.map){case 0:
+ if(!flag('book'))return 'HOME: Read the Book outside Christian’s house.';
+ if(!flag('wife_3'))return 'HOME: Answer Christian’s wife and urge her to come.';
+ if(!flag('child_2'))return 'HOME: Warn his child; optional neighbor dialogue.';
+ if(!flag('evangelist_2'))return 'GO EAST to the fields: hear Evangelist’s direction before fleeing.';
+ if(!flag('obstinate_3'))return 'PURSUIT ROAD: Obstinate has run after Christian. Give him an answer.';
+ if(!flag('pliable_2'))return 'PURSUIT ROAD: Speak to Pliable after Obstinate turns back.';
+ return 'Keep running EAST with Pliable toward the Slough of Despond.';
+ case 1:return !flag('sloughSunk')?'Enter the Slough with Pliable; both will fall into the mire.':!flag('sloughFarBank')?'Pliable has fled! Struggle EAST across the pale stones to the far side.':!flag('help')?'Christian cannot climb out at the far side. Speak with Help.':'Help has raised Christian onto sound ground. Go EAST.';
+ case 2:
+ if(s.moralityZone===0){if(!flag('worldly_3'))return 'CROSSROADS: Speak to Worldly Wiseman and examine his three persuasive claims.';if(!flag('corrected'))return 'Go NORTH at the fork toward Morality — Christian has been enticed by a promised cure.';return 'You have returned to the true way! Follow the EAST road to the Wicket Gate.';}
+ if(s.moralityZone===1){if(!flag('moralityRent')||!flag('moralityLegality')||!flag('moralityCivility'))return 'ROAD TO MORALITY: Inspect three signs: good living, Legality, and Civility. Then travel NORTH.';return flag('corrected')?'Evangelist has corrected Christian. Walk SOUTH twice to regain the road.':'Follow the road NORTH toward Mount Sinai.';}
+ if(!flag('sinai'))return 'MOUNT SINAI: Approach the overhanging cliff and witness its fire.';
+ if(!flag('corrected'))return 'MOUNT SINAI: Speak with Evangelist and answer his five questions.';
+ return 'MOUNT SINAI: Return SOUTH. Go back by Morality road to the original crossroads.';
+ case 3:
+ if(s.gateZone===0)return 'CASTLE ROAD: Travel EAST under the castle walls. Dodge arrows and find the Wicket Gate.';
+ if(s.gateZone===1)return !flag('gateInscription')?'WICKET FORECOURT: Read the inscription beside the narrow gate.':s.knocks<3?'WICKET FORECOURT: Press A at the gate to knock repeatedly ('+s.knocks+'/3).':!flag('gateEntry')?'WICKET FORECOURT: Good-will has appeared. Ask to enter.':'Go inside the gate.';
+ return !flag('gateTalk_5')?'NARROW WAY: Speak with Good-will. Explain your journey and learn the appointed way.':'Good-will has directed you to the Interpreter. Walk EAST along the narrow way.';
+ case 4:
+ if(s.interpreterZone===0)return !flag('portrait')?'ENTRY HALL: Learn the lesson of the grave portrait (west side).':!flag('dust')?'ENTRY HALL: Learn the lesson of the dusty room (east side).':'Move EAST to the inner gallery.';
+ if(s.interpreterZone===1)return !flag('patience')?'INNER GALLERY: Meet Passion and Patience (west side).':!flag('fire')?'INNER GALLERY: Inspect the fire that water cannot put out (center).':!flag('valiant')?'INNER GALLERY: Learn from the valiant man seeking entry to the palace (east side).':'Move EAST to the eastern chamber.';
+ return !flag('cage')?'EASTERN CHAMBER: Inspect the man in the iron cage (west side).':!flag('dream')?'EASTERN CHAMBER: Learn from the man awakened in terror of judgment (east side).':!flag('interpreter')?'Speak with the Interpreter in the eastern chamber and remember the lessons.':'Leave by the east passage for the Cross.';
+ case 5:return !flag('cross')?'Follow the walled road called Salvation to the Cross.':!flag('angel1')||!flag('angel2')||!flag('angel3')?'Receive the three Shining Ones’ gifts, in order.':!flag('simpleWarn')||!flag('slothWarn')||!flag('presumptionWarn')?'Wake Simple, Sloth, and Presumption; offer to free them from their irons.':'Continue EAST to Hill Difficulty.';
+ case 6:
+  if(s.hillZone===0)return !hillDebateDone()?'TWO STRANGERS: Answer Formalist and Hypocrisy about the gate, custom, and Christian’s garment.':'Follow them EAST to the foot of Hill Difficulty.';
+  if(s.hillZone===1)return !flag('hillSpring')?'THREE ROADS: Drink from the spring at the hill’s foot.':!flag('hillFork')?'THREE ROADS: Examine the three paths and choose the true way.':'Climb NORTH on the central road named DIFFICULTY. The other two routes are false shortcuts.';
+  if(s.hillZone===2)return !flag('hillSleep')?'ASCENT: Follow the winding stone trail to the arbor and rest.':flag('hillMissing')&&!flag('hillRecovered')?'RETURN: Search carefully underneath the arbor seat for your lost sealed roll.':!flag('hillRecovered')?'ASCENT: Continue NORTH to the summit; Christian has not yet noticed his roll is missing.':'ASCENT AGAIN: Take the recovered roll NORTH to the summit.';
+  return !hillWarningsDone()?'HILLTOP: Speak with Timorous and Mistrust about the lions.':!flag('hillRepent')?'HILLTOP: Christian discovers the roll missing. He must ask forgiveness and go back.':!flag('hillRecovered')?'GO BACK: Walk SOUTH down the hill to the arbor and find the roll.':!flag('hillReturn')?'Continue toward the palace as dusk falls.':'Keep to the EAST road toward Palace Beautiful.';
+ case 7:
+  if(s.palaceZone===0)return !flag('watchfulLion')?'THE LIONS: Speak with Watchful before attempting the narrow passage.':!flag('lionsPassed')?'THE LIONS: Walk in the middle of the path between the chained lions.':'Continue into the porter’s lodge.';
+  if(s.palaceZone===1)return !flag('watchful1')?'PORTER’S LODGE: Answer Watchful about your pilgrimage.':'Move EAST into the house.';
+  if(s.palaceZone===2)return !palaceLadiesDone()?'THE HOUSE: Speak with Discretion, Piety, Prudence, and Charity.':'Move EAST to behold the treasures and receive armor.';
+  return !flag('palaceTreasures')?'TREASURY: Examine the treasures of the house.':!flag('palaceArmor')?'ARMORY: Receive the whole armor before the valley below.':'Travel EAST to the Valley of Humiliation.';
+ case 8:
+  if(s.valleyZone===0)return !flag('valleyDescent')?'DESCENT: Heed the warning at the rocky path. Christian must humble himself for battle.':'Follow the winding road EAST toward the valley floor.';
+  if(s.valleyZone===1)return !flag('apollyon_3')?'APOLLYON: Approach the fiend and answer his accusations.':s.battlePhase==='combat'?'BOSS FIGHT: X or SWORD to strike, hold SHIFT or SHIELD against flaming darts. Hearts '+s.hp+'/9 · Apollyon '+s.bossHp+'/12.':s.battlePhase==='fallen'?'THE FALL: Christian has dropped his sword! Find it and recover the Word.':s.battlePhase==='finale'?'FINAL STRIKES: Face Apollyon and strike with the sword.':'Apollyon has fled! Continue EAST to receive healing.';
+  return !flag('valleyHealing')?'HEALING: Receive leaves from the tree of life.':!flag('valleyThanks')?'THANKSGIVING: Give thanks for deliverance.':'Go EAST to complete this chapter of the pilgrimage.';
+ }}
+function updateHUD(){
+ $('objective').textContent=objectives();let inventory=['Book'];if(flag('evangelist_2')||flag('evangelist'))inventory.push('Evangelist’s parchment');if(flag('cross'))inventory.push('New clothing');if(flag('angel3')){inventory.push('Forehead mark');inventory.push(flag('hillMissing')&&!flag('hillRecovered')?'Sealed roll MISSING':flag('hillSleep')&&!flag('hillMissing')?'Sealed roll (unchecked)':'Sealed roll');}if(flag('palaceArmor'))inventory.push('Whole armor (shield and sword)');if(s.map===8&&s.valleyZone===1&&s.battlePhase==='fallen')inventory.push('SWORD LOST');
+ const n=truths.filter(t=>flag(t[0])).length;
+ $('progress').innerHTML=`<span class="meta">Map ${s.map+1}/9${s.map===0?' · '+cityZones[s.cityZone]:s.map===2?' · '+moralityZones[s.moralityZone]:s.map===3?' · '+gateZones[s.gateZone]:s.map===4?' · '+interpreterZones[s.interpreterZone]:s.map===6?' · '+hillZones[s.hillZone]:s.map===7?' · '+palaceZones[s.palaceZone]:s.map===8?' · '+valleyZones[s.valleyZone]:''}</span> · ${s.map===0?cityCompleteCount()+'/5 main conversations · ':s.map===2&&s.moralityZone===1?['moralityRent','moralityLegality','moralityCivility'].filter(flag).length+'/3 Morality waymarks · ':s.map===2&&s.moralityZone===2?['correction_1','correction_2','correction_3','correction_4','corrected'].filter(flag).length+'/5 corrections · ':s.map===3&&s.gateZone===1?'Knocks '+s.knocks+'/3 · ':s.map===3&&s.gateZone===2?['gateTalk_1','gateTalk_2','gateTalk_3','gateTalk_4','gateTalk_5'].filter(flag).length+'/5 conversations · ':s.map===4?interpreterCount()+'/7 lessons · ':s.map===6?['hillForm1','hillForm2','hillHyp1','hillSpring','hillFork','hillSleep','hillTimorous','hillMistrust','hillRepent','hillRecovered'].filter(flag).length+'/10 hill tasks · ':s.map===7?['watchfulLion','watchful1','discretion','piety','prudence','charity','palaceTreasures','palaceArmor'].filter(flag).length+'/8 palace tasks · ':s.map===8?['valleyDescent','apollyon_1','apollyon_2','apollyon_3','apollyonSword','apollyonVictory','valleyHealing','valleyThanks'].filter(flag).length+'/8 valley tasks · ':''}${n} truths recorded<br><span class="meta">Burden:</span> ${flag('cross')?'Lifted':'Heavy'} · <span class="meta">Items:</span> ${inventory.join(' · ')}${s.finished?'<br>✦ CURRENT CHAPTER COMPLETE ✦':''}`;
+}
+
+const C={grass:'#4c8653',grass2:'#43804f',path:'#c9af78',path2:'#a28c60',water:'#3b819a',mud:'#5d533c',mud2:'#756043',stone:'#bec5a7',tree:'#205240',tree2:'#36714a',wall:'#575968',floor:'#9b8771',gold:'#f0d179',cream:'#fff0c8',black:'#1b2839',purple:'#706389',roof:'#8c4d45'};
+let grids=[];
+const fill=(c)=>Array.from({length:H},()=>Array.from({length:W},()=>c));
+function rect(a,x1,y1,x2,y2,c){for(let y=Math.max(0,y1);y<=Math.min(H-1,y2);y++)for(let x=Math.max(0,x1);x<=Math.min(W-1,x2);x++)a[y][x]=c}
+function road(a,x1,y1,x2,y2){if(y1===y2){for(let x=x1;x<=x2;x++)a[y1][x]='r';}else if(x1===x2){for(let y=y1;y<=y2;y++)a[y][x1]='r'}}
+function construct(){let a;
+a=fill('g');rect(a,2,2,8,5,'h');a[5][5]='d';rect(a,12,2,16,4,'h');a[4][14]='d';rect(a,17,10,22,12,'h');a[10][19]='d';road(a,1,7,23,7);road(a,2,8,22,8);road(a,5,5,5,8);road(a,14,4,14,7);road(a,19,8,19,10);rect(a,0,0,23,0,'t');for(let x of [0,1,9,10,21,23])for(let y of [2,3,10,11,12])if(a[y][x]==='g')a[y][x]='t';a[7][3]='r';grids.push(a);
+a=fill('g');
+road(a,0,7,5,7);road(a,18,7,23,7);
+for(let y=2;y<=11;y++)for(let x=5;x<=18;x++)a[y][x]='m';
+let stones=[[5,7],[6,7],[7,7],[8,7],[8,6],[9,6],[10,6],[10,5],[11,5],[12,5],[12,6],[13,6],[14,6],[14,7],[15,7],[16,7],[17,7],[18,7]];
+for(let [x,y] of stones)a[y][x]='s';
+for(let [x,y] of [[6,5],[7,4],[9,4],[11,4],[13,4],[15,5],[16,4],[17,5],[7,9],[9,9],[11,10],[13,9],[15,10],[16,9]])a[y][x]='p';
+for(let [x,y] of [[5,3],[6,3],[18,3],[18,10],[17,10],[6,10],[4,4],[4,10],[19,4],[19,10]])a[y][x]='t';
+a[3][3]='L';a[10][20]='L';
+grids.push(a);
+a=fill('g');road(a,0,7,23,7);road(a,10,3,10,7);road(a,10,3,16,3);rect(a,18,0,23,4,'k');rect(a,21,5,23,6,'k');for(let x of [0,1,3,5,7,23]){a[1][x]='t';a[11][x]='t';}a[2][15]='k';a[2][16]='k';grids.push(a);
+a=fill('g');road(a,0,7,23,7);rect(a,13,0,22,3,'c');rect(a,15,4,20,4,'c');for(let x of [0,1,4,7,9,23]){a[1][x]='t';a[12][x]='t';}for(let x=13;x<=21;x++)a[7][x]='r';a[7][22]='G';grids.push(a);
+a=fill('f');rect(a,0,0,23,0,'w');rect(a,0,13,23,13,'w');rect(a,0,0,0,13,'w');rect(a,23,0,23,13,'w');a[7][0]='f';a[7][23]='E';rect(a,1,6,22,6,'w');for(let x of [5,12,17])a[6][x]='f';rect(a,11,1,11,12,'w');a[7][11]='f';a[6][11]='f';a[10][11]='f';a[12][11]='f';for(let x of [4,5,6,16,17,18])for(let y of [2,3,4,9,10,11])if(a[y][x]==='f')a[y][x]='q';grids.push(a);
+a=fill('g');road(a,0,7,23,7);for(let x=0;x<=7;x++){a[4][x]='F';a[10][x]='F';}for(let x=7;x<=15;x++)for(let y=4;y<=10;y++)if(a[y][x]==='g')a[y][x]='l';a[6][10]='X';a[9][12]='b';for(let x of [0,1,2,22,23])for(let y of [1,2,12])a[y][x]='t';for(let x of [17,19,21])a[4][x]='s';grids.push(a);
+}
+construct();
+const moralityGrids=[];
+function buildMorality(){let a;
+ // The true road and the deceptive northward fork.
+ a=fill('g');road(a,0,7,23,7);road(a,12,0,12,7);road(a,11,0,11,7);
+ for(let [x,y] of [[0,1],[1,2],[2,10],[4,2],[5,11],[7,2],[8,10],[15,1],[17,3],[20,2],[22,11],[21,10],[17,11]])a[y][x]='t';
+ for(let [x,y] of [[14,5],[14,6],[15,5],[17,8],[18,8],[18,9],[6,4],[7,4]])a[y][x]='p';
+ for(let x=4;x<10;x++)a[12][x]='L';
+ moralityGrids.push(a);
+ // The inviting approach: orchards, respectable houses, little way signs.
+ a=fill('g');road(a,11,0,11,13);road(a,12,0,12,13);road(a,4,7,20,7);
+ rect(a,2,2,7,5,'n');a[5][4]='d';rect(a,16,2,21,5,'h');a[5][18]='d';rect(a,17,10,21,12,'n');a[10][19]='d';
+ for(let [x,y] of [[1,2],[1,10],[3,11],[7,10],[8,2],[14,2],[22,2],[23,11],[15,11]])a[y][x]='t';
+ for(let [x,y] of [[2,8],[3,8],[4,8],[5,8],[7,8],[8,8],[14,8],[15,8]])a[y][x]='p';
+ for(let [x,y] of [[1,12],[2,12],[3,12],[6,12],[15,12]])a[y][x]='L';
+ moralityGrids.push(a);
+ // The unpassable mountain: the near face hangs over Christian’s path.
+ a=fill('g');road(a,11,7,11,13);road(a,12,7,12,13);road(a,8,9,13,9);road(a,9,8,13,8);
+ rect(a,16,0,23,13,'k');rect(a,15,1,23,12,'k');rect(a,14,4,23,10,'k');
+ for(let [x,y] of [[14,2],[15,0],[13,2],[15,12],[14,12],[18,13],[21,13]])a[y][x]='k';
+ for(let [x,y] of [[1,2],[2,3],[3,11],[4,2],[6,11],[7,4],[8,2],[3,8]])a[y][x]='t';
+ for(let [x,y] of [[10,5],[11,6],[12,5],[13,3],[12,3]])a[y][x]='b';
+ for(let x=8;x<=13;x++)if(a[10][x]==='g')a[10][x]='r';
+ moralityGrids.push(a);
+}
+buildMorality();
+// Three connected screens preserve the order of Bunyan's Wicket Gate encounter.
+const gateGrids=[];
+function buildWicket(){let a;
+ // Beelzebub's castle road: the high battlements threaten the pilgrim from the north.
+ a=fill('g');for(let y of [7,8])road(a,0,y,23,y);
+ rect(a,13,0,23,3,'c');rect(a,14,4,21,4,'c');
+ for(let x of [14,18,22])a[4][x]='F';
+ for(const [x,y] of [[0,2],[2,2],[3,11],[6,3],[7,11],[10,1],[11,12],[22,12],[2,12],[9,3]])a[y][x]='t';
+ for(const [x,y] of [[5,6],[9,9],[11,6],[20,10]])a[y][x]='L';
+ gateGrids.push(a);
+ // The forecourt: walls seal the eastern edge; the ONLY entrance is the small wicket.
+ a=fill('g');for(let y of [7,8])road(a,0,y,21,y);
+ rect(a,10,0,22,3,'c');rect(a,12,4,20,4,'c');
+ for(let y=0;y<H;y++){a[y][22]='F';a[y][23]='F';}
+ for(let y of [5,6,8,9,10])a[y][21]='F';a[7][21]='G';
+ for(const [x,y] of [[1,2],[2,12],[4,3],[5,12],[7,2],[8,11],[11,11],[16,12],[20,12]])a[y][x]='t';
+ for(const [x,y] of [[5,6],[9,9],[13,9],[17,10]])a[y][x]='L';
+ for(const [x,y] of [[11,7],[14,7],[17,7]])a[y][x]='s';
+ gateGrids.push(a);
+ // The shelter inside the narrow gate: there is peace, but the burden remains.
+ a=fill('g');for(let x=0;x<W;x++)a[7][x]='r';
+ for(let x=4;x<23;x++)a[8][x]='r';
+ for(let y of [0,1,2,11,12,13])for(let x=1;x<23;x++)if((x+y)%3===0)a[y][x]='p';
+ for(const [x,y] of [[2,2],[3,11],[7,2],[8,11],[12,3],[14,11],[18,2],[20,11],[22,3]])a[y][x]='t';
+ for(const [x,y] of [[9,6],[15,6],[19,8]])a[y][x]='L';
+ gateGrids.push(a);
+}
+buildWicket();
+const cityGrids=[];
+function buildCity(){let a;
+ // Zone 0: quiet home quarter; stone streets, gardens and prominent homes
+ a=fill('g');rect(a,2,2,9,5,'h');a[5][5]='d';rect(a,14,2,21,5,'n');a[5][17]='d';rect(a,3,10,8,12,'n');a[10][6]='d';rect(a,12,10,20,12,'h');a[10][16]='d';
+ road(a,0,7,23,7);road(a,0,8,23,8);road(a,5,5,5,8);road(a,17,5,17,8);road(a,6,8,6,10);road(a,16,8,16,10);
+ for(let x=0;x<W;x++)for(let y of [7,8])a[y][x]='v';
+ for(let [x,y] of [[0,1],[1,1],[11,2],[12,2],[22,2],[23,2],[0,12],[1,12],[22,11],[23,11],[10,12],[11,12]])a[y][x]='t';
+ for(let [x,y] of [[10,3],[10,4],[11,4],[12,4],[21,10],[22,10],[22,9]])a[y][x]='p';
+ for(let [x,y] of [[1,6],[22,6],[1,9],[22,9]])a[y][x]='L';
+ cityGrids.push(a);
+ // Zone 1: cobbled market, shops, stands, central fountain
+ a=fill('g');rect(a,2,2,9,5,'h');a[5][6]='d';rect(a,15,2,21,5,'n');a[5][18]='d';rect(a,2,10,9,12,'n');a[10][5]='d';rect(a,16,10,21,12,'h');a[10][19]='d';
+ for(let y=6;y<=9;y++)for(let x=0;x<W;x++)a[y][x]='v';
+ road(a,6,5,6,9);road(a,18,5,18,9);road(a,5,9,5,10);road(a,19,9,19,10);
+ for(let [x,y] of [[11,2],[12,2],[11,3],[12,3]])a[y][x]='o';
+ for(let [x,y] of [[10,11],[11,11],[12,11],[13,11],[14,11],[10,12],[11,12],[12,12],[13,12],[14,12]])a[y][x]='u';
+ for(let [x,y] of [[0,1],[1,1],[22,1],[23,1],[0,12],[23,12]])a[y][x]='t';
+ for(let [x,y] of [[1,6],[22,6],[1,9],[22,9]])a[y][x]='L';
+ cityGrids.push(a);
+ // Zone 2: open fields beyond the city, where Evangelist meets Christian.
+ a=fill('g');road(a,0,7,23,7);road(a,0,8,23,8);
+ for(let y=0;y<H;y++)if(y!==7&&y!==8)a[y][0]='F';
+ for(let [x,y] of [[3,2],[4,3],[6,1],[8,11],[11,2],[12,12],[14,2],[17,11],[20,2],[22,12]])a[y][x]='t';
+ for(let [x,y] of [[5,5],[7,6],[9,9],[10,4],[13,10],[16,4],[18,9],[21,6]])a[y][x]='p';
+ for(let [x,y] of [[2,6],[12,6],[19,6],[2,9],[20,9]])a[y][x]='L';cityGrids.push(a);
+ // Zone 3: beyond the fields, Obstinate and Pliable catch Christian.
+ a=fill('g');for(let y of [7,8])road(a,0,y,23,y);
+ for(let [x,y] of [[0,2],[2,1],[4,12],[6,3],[9,11],[11,2],[13,12],[15,3],[19,12],[22,2],[23,12]])a[y][x]='t';
+ for(let [x,y] of [[3,5],[5,9],[8,4],[10,10],[14,5],[17,10],[20,5]])a[y][x]='p';
+ a[5][3]='L';cityGrids.push(a);
+}
+buildCity();
+const interpreterGrids=[];
+function buildInterpreter(){let a;
+ // Entry hall: portrait and dusty room.
+ a=fill('f');rect(a,0,0,23,0,'w');rect(a,0,13,23,13,'w');rect(a,0,0,0,13,'w');rect(a,23,0,23,13,'w');a[7][0]='f';a[7][23]='f';
+ rect(a,11,1,12,12,'w');a[7][11]='f';a[7][12]='f';for(let x=2;x<=8;x++)for(let y=2;y<=5;y++)a[y][x]='q';for(let x=15;x<=20;x++)for(let y=2;y<=5;y++)a[y][x]='q';
+ for(let [x,y] of [[4,9],[7,10],[16,10],[19,9],[4,2],[19,2]])a[y][x]='L';interpreterGrids.push(a);
+ // Inner gallery: fire, patience, valiant man.
+ a=fill('f');rect(a,0,0,23,0,'w');rect(a,0,13,23,13,'w');rect(a,0,0,0,13,'w');rect(a,23,0,23,13,'w');a[7][0]='f';a[7][23]='f';
+ rect(a,7,1,8,12,'w');rect(a,15,1,16,12,'w');a[7][7]='f';a[7][8]='f';a[7][15]='f';a[7][16]='f';
+ for(let x=1;x<=5;x++)for(let y=3;y<=10;y++)a[y][x]='q';for(let x=10;x<=13;x++)for(let y=3;y<=10;y++)a[y][x]='q';for(let x=18;x<=22;x++)for(let y=3;y<=10;y++)a[y][x]='q';
+ for(let [x,y] of [[3,2],[3,11],[11,2],[12,11],[20,2],[20,11]])a[y][x]='L';interpreterGrids.push(a);
+ // Eastern chamber: cage and dream, with final eastern passage.
+ a=fill('f');rect(a,0,0,23,0,'w');rect(a,0,13,23,13,'w');rect(a,0,0,0,13,'w');rect(a,23,0,23,13,'w');a[7][0]='f';a[7][23]='E';
+ rect(a,11,1,12,12,'w');a[7][11]='f';a[7][12]='f';for(let x=2;x<=8;x++)for(let y=2;y<=10;y++)a[y][x]='q';for(let x=15;x<=21;x++)for(let y=2;y<=10;y++)a[y][x]='q';
+ for(let [x,y] of [[4,11],[7,2],[16,11],[19,2],[20,9]])a[y][x]='L';interpreterGrids.push(a);
+}
+buildInterpreter();
+const hillGrids=[];
+function buildHill(){let a;
+ // Christian meets men who climbed the wall rather than entering by the gate.
+ a=fill('g');for(let x=0;x<W;x++){a[7][x]='r';a[8][x]='r';}
+ for(let x=2;x<20;x++){if(x!==9&&x!==10){a[3][x]='F';a[10][x]='F';}}
+ for(let [x,y] of [[1,2],[1,11],[4,1],[7,12],[11,1],[16,12],[21,2],[22,11]])a[y][x]='t';
+ for(let [x,y] of [[5,5],[18,5],[4,9],[20,9]])a[y][x]='L';
+ for(let [x,y] of [[8,4],[9,4],[10,4],[10,5]])a[y][x]='s';
+ hillGrids.push(a);
+ // Fountain and three roads. Left turns into dangerous woods; right into dark mountains.
+ a=fill('g');for(let x=0;x<W;x++){a[7][x]='r';a[8][x]='r';}
+ for(let y=0;y<=7;y++){a[y][11]='r';a[y][12]='r';}
+ for(let x=1;x<=9;x++)for(let y=1;y<=5;y++)if((x+y)%3!==1)a[y][x]='t';
+ for(let x=16;x<=23;x++)for(let y=1;y<=5;y++)a[y][x]=(x+y)%3===0?'b':'k';
+ for(let x=2;x<=9;x++)a[6][x]='r';for(let x=15;x<=21;x++)a[6][x]='r';
+ for(let [x,y] of [[1,10],[3,12],[19,11],[21,12]])a[y][x]='t';
+ for(let [x,y] of [[10,9],[14,9],[7,10],[16,10]])a[y][x]='p';
+ a[9][12]='o';a[8][12]='s';a[6][12]='s';hillGrids.push(a);
+ // Zigzag ascent: rocky slopes block the way except for the carved switchback.
+ a=fill('k');
+ const carve=(x1,y1,x2,y2)=>{if(x1===x2){for(let y=Math.min(y1,y2);y<=Math.max(y1,y2);y++)a[y][x1]='r';}else{for(let x=Math.min(x1,x2);x<=Math.max(x1,x2);x++)a[y1][x]='r';}};
+ carve(12,12,12,11);carve(5,11,12,11);carve(5,11,5,9);carve(5,9,18,9);carve(18,9,18,6);
+ carve(8,6,18,6);carve(8,6,8,4);carve(8,4,15,4);carve(15,4,15,2);carve(12,2,15,2);carve(12,0,12,2);
+ a[12][12]='r';a[13][12]='r';a[5][8]='q';a[6][8]='q';a[5][9]='q';a[6][9]='q';
+ for(let [x,y] of [[1,1],[3,3],[20,3],[22,11],[2,10],[21,10]])a[y][x]='b';
+ hillGrids.push(a);
+ // Hilltop: the warning of lions and, on return, darkness and the palace in the east.
+ a=fill('g');for(let y=5;y<=12;y++){a[y][12]='r';a[y][11]='r';}
+ for(let x=11;x<W;x++){a[7][x]='r';a[8][x]='r';}
+ a[13][12]='r';
+ for(let [x,y] of [[0,2],[1,2],[2,10],[4,11],[6,3],[8,1],[9,12],[16,11],[19,12],[23,12]])a[y][x]='t';
+ for(let [x,y] of [[4,6],[7,8],[8,7],[15,5]])a[y][x]='p';
+ for(let x=17;x<=22;x++)for(let y=1;y<=4;y++)a[y][x]='h';
+ a[4][19]='d';a[4][20]='d';
+ hillGrids.push(a);
+}
+buildHill();
+const palaceGrids=[];
+function buildPalace(){let a;
+ // The narrow way between the chained lions.
+ a=fill('g');for(let x=0;x<W;x++){a[7][x]='r';a[8][x]='r';}for(let [x,y] of [[2,2],[3,11],[6,2],[9,11],[20,2],[22,11]])a[y][x]='t';rect(a,19,3,23,5,'h');a[5][21]='d';for(let x=16;x<=18;x++){a[6][x]='q';a[9][x]='q';}palaceGrids.push(a);
+ // Watchful's lodge just within the gate.
+ a=fill('f');rect(a,0,0,23,0,'w');rect(a,0,13,23,13,'w');rect(a,0,0,0,13,'w');rect(a,23,0,23,13,'w');a[7][0]='f';a[7][23]='f';rect(a,7,1,16,4,'q');rect(a,5,9,18,11,'q');palaceGrids.push(a);
+ // The ladies of the house.
+ a=fill('f');rect(a,0,0,23,0,'w');rect(a,0,13,23,13,'w');rect(a,0,0,0,13,'w');rect(a,23,0,23,13,'w');a[7][0]='f';a[7][23]='f';rect(a,2,2,8,5,'q');rect(a,14,2,20,5,'q');rect(a,2,8,8,11,'q');rect(a,14,8,20,11,'q');palaceGrids.push(a);
+ // Treasury and armory.
+ a=fill('f');rect(a,0,0,23,0,'w');rect(a,0,13,23,13,'w');rect(a,0,0,0,13,'w');rect(a,23,0,23,13,'w');a[7][0]='f';a[7][23]='E';rect(a,2,2,9,10,'q');rect(a,14,2,21,10,'q');for(let [x,y] of [[4,3],[7,4],[16,3],[18,5],[19,8]])a[y][x]='L';palaceGrids.push(a);
+}
+buildPalace();
+const valleyGrids=[];
+function buildValley(){let a;
+ // A descending stone path, windswept and narrow.
+ a=fill('k');for(let y=6;y<=9;y++)for(let x=0;x<=6;x++)a[y][x]='r';for(let x=6;x<=12;x++)for(let y=8;y<=10;y++)a[y][x]='r';for(let x=12;x<=18;x++)for(let y=5;y<=9;y++)a[y][x]='r';for(let x=18;x<W;x++)for(let y=6;y<=9;y++)a[y][x]='r';for(const [x,y] of [[2,3],[5,5],[8,3],[10,11],[15,11],[19,3],[20,11]])a[y][x]='b';valleyGrids.push(a);
+ // Apollyon's battlefield, broad enough to dodge and parry flaming darts.
+ a=fill('g');for(let x=0;x<W;x++)for(let y=3;y<=11;y++)a[y][x]=((x*3+y*7)%11===0)?'l':'r';for(let x=0;x<W;x++){a[2][x]='k';a[12][x]='k';}for(const [x,y] of [[2,3],[3,10],[8,3],[10,11],[20,4],[22,10]])a[y][x]='b';valleyGrids.push(a);
+ // Quiet valley beyond the fight; the healing leaves and a place of praise.
+ a=fill('g');for(let x=0;x<W;x++)a[7][x]='r';for(let x=2;x<=19;x++)for(let y=3;y<=5;y++)if((x+y)%2===0)a[y][x]='p';for(const [x,y] of [[1,2],[4,11],[9,12],[16,11],[20,2],[23,11]])a[y][x]='t';for(let x=16;x<=21;x++)a[9][x]='s';valleyGrids.push(a);
+}
+buildValley();
+function tile(x,y){let q=s.map===0?cityGrids[s.cityZone]:s.map===2?moralityGrids[s.moralityZone]:s.map===3?gateGrids[s.gateZone]:s.map===4?interpreterGrids[s.interpreterZone]:s.map===6?hillGrids[s.hillZone]:s.map===7?palaceGrids[s.palaceZone]:s.map===8?valleyGrids[s.valleyZone]:grids[s.map];return q?.[y]?.[x]||'w'}
+function blocked(x,y){if(x<0||x>=W||y<0||y>=H)return true;let t=tile(x,y);if(['w','h','n','t','k','c','F','G','u','o','L'].includes(t))return true;return actors().some(n=>n.x===x&&n.y===y)}
+function actor(id,name,x,y,color,dialogue,kind='person'){return{id,name,x,y,color,dialogue,kind}}
+function actors(){switch(s.map){case 0:
+ if(s.cityZone===0)return [actor('wife','Your Wife',7,6,'#d87c83',family,'woman'),actor('child','Your Child',11,9,'#e9bc71',child,'child'),actor('neighbor','Neighbor',19,7,'#9bbec3',neighbor,'neighbor')];
+ if(s.cityZone===1)return [actor('merchant','Merchant',13,9,'#edbd71',merchant,'merchant'),actor('watchman','City Watchman',6,8,'#a7adbf',watchman,'guard')];
+ if(s.cityZone===2)return [actor('evangelist','Evangelist',17,6,'#efd07d',evangelist,'evangelist')];
+ return [actor('obstinate','Obstinate',7,6,'#bb6d83',obstinate,'scholar'),actor('pliable','Pliable',18,8,'#84bd8b',pliable,'pilgrim')];
+ case 1:return !flag('sloughSunk')?[actor('pliable','Pliable',3,6,'#9cce9f',()=>show('Pliable','The fields grow marshy. Pliable still speaks cheerfully, but he has not counted the cost of the journey.'))]:flag('sloughFarBank')&&!flag('help')?[actor('help','Help',20,7,'#e6d69c',helpRescue,'evangelist')]:flag('help')?[actor('help','Help',20,6,'#e6d69c',()=>show('Help','I have drawn thee from the mire and placed thee upon sound ground. Go thy way, Christian.'),'evangelist')]:[];
+ case 2:
+ if(s.moralityZone===0)return [actor('wiseman','Worldly Wiseman',7,6,'#bd79c9',wiseman,'scholar')];
+ if(s.moralityZone===1)return [];
+ return flag('sinai')?[actor('evangelist','Evangelist',9,9,'#f2cf73',evangelist2,'evangelist')]:[];
+ case 3:
+ if(s.gateZone===1)return s.knocks>=3?[actor('goodwill','Good-will',21,6,'#ebce7b',goodwill,'evangelist')]:[];
+ return s.gateZone===2?[actor('goodwill','Good-will',5,6,'#ebce7b',goodwillInside,'evangelist')]:[];
+ case 4:
+  if(s.interpreterZone===0)return [actor('interpreter','Interpreter',12,8,'#e6d19a',interpreterIntro,'evangelist')];
+  if(s.interpreterZone===2&&allInterpreterLessons()&&!flag('interpreter'))return [actor('interpreter','Interpreter',13,8,'#e6d19a',interpreterFinal,'evangelist')];
+  return [];
+ case 5:return [...(flag('cross')?[actor('angel1','Shining One I',13,5,'#fceaa5',angel1,'angel'),actor('angel2','Shining One II',14,7,'#fceaa5',angel2,'angel'),actor('angel3','Shining One III',13,9,'#fceaa5',angel3,'angel')]:[]),actor('simple','Simple',17,5,'#8a9aab',()=>warnSleeper('simpleWarn','Simple','I see no danger'),'sleeper'),actor('sloth','Sloth',19,5,'#8a9aab',()=>warnSleeper('slothWarn','Sloth','Yet a little more sleep'),'sleeper'),actor('presumption','Presumption',21,5,'#8a9aab',()=>warnSleeper('presumptionWarn','Presumption','Every tub must stand upon its own bottom'),'sleeper')];
+ case 6:
+  if(s.hillZone===0)return [actor('formalist','Formalist',9,6,'#b9a1d6',hillFormalist,'scholar'),actor('hypocrisy','Hypocrisy',16,8,'#c88283',hillHypocrisy,'scholar')];
+  if(s.hillZone===3&&!hillWarningsDone())return [actor('timorous','Timorous',9,7,'#c69cbe',hillTimorous,'pilgrim'),actor('mistrust','Mistrust',14,9,'#c4c0a1',hillMistrust,'pilgrim')];
+  return [];
+ case 7:
+  if(s.palaceZone===0)return [actor('lion1','Lion',16,6,'#9b784e',lionWarn,'lion'),actor('lion2','Lion',16,9,'#9b784e',lionWarn,'lion'),actor('watchful','Watchful',21,7,'#e9cf86',watchfulLions,'guard')];
+  if(s.palaceZone===1)return [actor('watchful','Watchful',12,6,'#e9cf86',watchfulLodge,'guard')];
+  if(s.palaceZone===2)return [actor('discretion','Discretion',5,4,'#d9a8b0',discretion,'woman'),actor('piety','Piety',17,4,'#d1c692',piety,'woman'),actor('prudence','Prudence',5,10,'#9cb7c7',prudence,'woman'),actor('charity','Charity',17,10,'#d48e77',charity,'woman')];
+  return [];
+ case 8:
+  if(s.valleyZone===0)return [actor('watchfulfarewell','Watchful',3,6,'#e9cf86',valleyFarewell,'guard')];
+  return [];
+ }}
+function objects(){switch(s.map){case 0:return s.cityZone===0?[{id:'bookobj',x:5,y:6,label:'Book',fn:book,kind:'book'},{id:'citysign',x:12,y:6,label:'Warning Board',fn:noticeBoard,kind:'sign'}]:s.cityZone===1?[{id:'marketnotice',x:3,y:9,label:'Market Notice',fn:marketNotice,kind:'sign'}]:s.cityZone===2?[{id:'fieldboard',x:21,y:9,label:'Field Sign',fn:fieldboard,kind:'sign'}]:[{id:'pursuitboard',x:21,y:7,label:'Road Sign',fn:pursuitboard,kind:'sign'}];
+ case 1:return [{id:'sloughsign',x:3,y:3,label:'Slough Marker',fn:sloughSign,kind:'sign'},{id:'stoneguide',x:20,y:10,label:'Stone Marker',fn:stoneGuide,kind:'sign'}];
+ case 2:
+  if(s.moralityZone===0)return [{id:'fork',x:13,y:4,label:'Fork Marker',fn:forkSign,kind:'sign'}];
+  if(s.moralityZone===1)return [{id:'lodging',x:4,y:7,label:'Comforts of Morality',fn:moralityRent,kind:'sign'},{id:'legality',x:18,y:7,label:'Legality',fn:moralityLegality,kind:'sign'},{id:'civility',x:19,y:9,label:'Civility',fn:moralityCivility,kind:'sign'}];
+  return [{id:'cliff',x:13,y:5,label:'Mount Sinai Cliff',fn:sinaiCliff,kind:'sign'}];
+ case 3:return s.gateZone===0?[{id:'castlewarning',x:8,y:5,label:'Warning',fn:castleWarning,kind:'sign'}]:s.gateZone===1?[{id:'gateinscription',x:18,y:5,label:'Inscription',fn:gateInscription,kind:'sign'},{id:'wicketdoor',x:21,y:7,label:'Wicket Gate',fn:gateKnock,kind:'door'}]:[{id:'straightway',x:13,y:6,label:'Narrow Road',fn:straightWay,kind:'sign'}];
+ case 4:
+  if(s.interpreterZone===0)return [{id:'portrait',x:5,y:3,label:'The Portrait',fn:portrait,kind:'portrait'},{id:'dust',x:18,y:3,label:'Dusty Room',fn:dust,kind:'dust'}];
+  if(s.interpreterZone===1)return [{id:'patience',x:3,y:3,label:'Passion & Patience',fn:patience,kind:'patience'},{id:'fire',x:11,y:9,label:'Living Fire',fn:fire,kind:'fire'},{id:'valiant',x:20,y:4,label:'Valiant Man',fn:valiant,kind:'valiant'}];
+  return [{id:'cage',x:5,y:4,label:'Iron Cage',fn:cage,kind:'cage'},{id:'dream',x:18,y:4,label:'Awakened Dreamer',fn:dream,kind:'dream'}];
+ case 5:return [{id:'cross',x:10,y:6,label:'Cross',fn:cross,kind:'cross'}];
+ case 6:
+  if(s.hillZone===0)return [{id:'wall',x:8,y:3,label:'Wall of a shortcut',fn:hillWall,kind:'sign'}];
+  if(s.hillZone===1)return [{id:'spring',x:12,y:9,label:'Spring',fn:hillSpring,kind:'spring'},{id:'fork',x:12,y:5,label:'Three Roads',fn:hillFork,kind:'sign'},{id:'danger',x:5,y:6,label:'Danger',fn:hillDanger,kind:'sign'},{id:'destruction',x:19,y:6,label:'Destruction',fn:hillDestruction,kind:'sign'}];
+  if(s.hillZone===2)return [{id:'arbor',x:8,y:6,label:'The Arbor',fn:hillArbor,kind:'arbor'}];
+  return [{id:'palace',x:20,y:5,label:'Palace Beautiful',fn:hillPalace,kind:'sign'}];
+ case 7:
+  if(s.palaceZone===0)return [{id:'lionroad',x:12,y:7,label:'Narrow passage',fn:lionPath,kind:'sign'}];
+  if(s.palaceZone===1)return [{id:'porterboard',x:18,y:4,label:'Porter’s lodge',fn:porterBoard,kind:'sign'}];
+  if(s.palaceZone===2)return [];
+  return [{id:'treasury',x:6,y:6,label:'Treasures',fn:palaceTreasures,kind:'treasure'},{id:'armory',x:18,y:6,label:'Armory',fn:palaceArmor,kind:'armory'}];
+ case 8:
+  if(s.valleyZone===0)return [{id:'descent',x:8,y:8,label:'Warning at descent',fn:valleyFarewell,kind:'sign'}];
+  if(s.valleyZone===1)return s.battlePhase==='fallen'?[{id:'fallenSword',x:9,y:9,label:'Fallen sword',fn:recoverSword,kind:'fallenSword'}]:[];
+  return [{id:'healing',x:7,y:6,label:'Healing leaves',fn:valleyHeal,kind:'healing'},{id:'praise',x:17,y:7,label:'Place of praise',fn:valleyPraise,kind:'sign'}];
+ default:return []}}
+function book(){if(!flag('book')){learn('book');show('THE BOOK','“What shall I do to be saved?” Christian trembles as he reads of judgment and sees the burden of his own sin. He knows the City of Destruction will not endure. He must warn those he loves, even if they refuse to listen.');}else show('THE BOOK','Christian searches the Book again. It warns of judgment and promises an inheritance that cannot fade. Open the JOURNAL to review the truths you have learned.');}
+function staged(name,steps,ending){
+ if(!flag('book'))return show(name,'Before you argue, examine the golden Book at Christian’s home. An answer needs a reason.');
+ let st=steps.find(k=>!flag(k[0]));
+ if(!st)return show(name,ending);
+ makeQuestion(st[0],name,st[1],st[2],st[3],()=>{
+   const next=steps.find(k=>!flag(k[0]));
+   if(next)staged(name,steps,ending);else show(name,ending);
+ });
+}
+function family(){staged('YOUR WIFE',[
+ ['wife_1','“You cry that our city will be destroyed. We have lived here safely for years! Why should we leave?”',[
+  ['Our familiarity with this city cannot cancel God’s warning: all have sinned and must face judgment.',true],
+  ['Because I have grown tired of these streets and want excitement.',false,'Boredom offers no reason to think destruction is coming.'],
+  ['Because I am wiser and better than everyone who stays.',false,'The Book exposes Christian’s own sin; he cannot boast of superiority.']],
+  'Christian explains the danger as something he, too, must face—not a charge that he is better than his family.'],
+ ['wife_2','“Perhaps your fears are only a fit of sadness. Why should we believe what is written in that Book?”',[
+  ['We must examine whether its warning is true; an unwelcome claim is not false merely because it frightens us.',true],
+  ['If it frightens me enough, it must be true.',false,'Strong feelings alone do not establish the truth of a claim.'],
+  ['We should never ask whether a book’s claims are true.',false,'Christian appeals to the Book’s testimony and calls others to consider it.']],
+  'His wife still fears his mind has been unsettled. She has heard his reason, but does not receive it.'],
+ ['wife_3','“If you really love your family, how can you walk away from us?”',[
+  ['I do love you. That is why I warn you and ask you to come; but I cannot make the danger unreal by staying.',true],
+  ['Our love means that what is true does not matter.',false,'Affection cannot change the truth about danger or deliverance.'],
+  ['I have no duty to care what happens to you.',false,'Christian pleads with his family precisely because he cares for them.']],
+  'Christian pleads with her to flee as well. She begs him to remain. He grieves, unable to make another person believe.'],
+ ],'Your wife remains unconvinced. “Stay with us!” she calls. Christian cannot force her to leave.');}
+function child(){staged('YOUR CHILD',[
+ ['child_1','“Father, why would you leave our home, our toys, our friends, and everything we enjoy?”',[
+  ['What does it profit a person to gain the whole world and yet lose his soul? These comforts cannot last forever.',true],
+  ['I promise we shall find a city full of gold and toys.',false,'The pilgrimage is not a scheme for worldly riches.'],
+  ['Things are bad simply because people enjoy them.',false,'The issue is giving passing comforts the place of the highest good.']],
+  'Christian kneels and explains why the soul matters more than comforts or possessions.'],
+ ['child_2','“Will the road be safe? Can you promise nothing painful will happen to us?”',[
+  ['I cannot promise an easy road. The Lord calls us to follow the truth even through suffering.',true],
+  ['Yes, the journey will be easy in every way.',false,'Bunyan’s pilgrimage is full of danger, temptation, and trial.'],
+  ['If there is danger, then the promised inheritance cannot be real.',false,'The hardships of a journey do not disprove its destination.']],
+  'The child clings to Christian, still afraid and unwilling to leave.'],
+ ],'“Please do not leave!” your child cries. Christian weeps and continues to plead, but the child does not go.');}
+function neighbor(){staged('OLD NEIGHBOR',[
+ ['neighbor_1','“You sound as if you are calling all of us bad people. Are you claiming to be a better man?”',[
+  ['No. I have a burden of sin myself. All need God’s mercy, including me.',true],
+  ['Yes. My goodness proves I deserve an easier road.',false,'Christian’s burden represents his awareness of guilt.'],
+  ['The question of my own sin has nothing to do with warning you.',false,'Sound witness includes recognizing one’s own need.']],
+  'The neighbor pauses, surprised to hear that Christian includes himself in the warning.'],
+ ['neighbor_2','“Perhaps I shall think about all this many years from now. What is the hurry?”',[
+  ['We cannot know how long we have. The urgency of judgment is not removed by putting it off.',true],
+  ['I know the exact day this city will fall.',false,'Christian is given a warning, not an exact date.'],
+  ['The matter becomes less serious each year we delay.',false,'Delay does not answer the question of truth.']],
+  'The neighbor does not join him, but cannot deny the uncertainty of tomorrow.'],
+ ],'The neighbor sighs: “I may consider your words another day.” Optional dialogue complete.');}
+function obstinate(){staged('OBSTINATE',[
+ ['obstinate_1','“Away with your Book! You speak of an inheritance you cannot see. How can you believe in unseen things?”',[
+  ['Not seeing something does not prove it false. We must consider the testimony and promises given in the Book.',true],
+  ['Every invisible thing people imagine must exist.',false,'The possibility of unseen things does not establish every imagined claim.'],
+  ['I have already visited the Celestial City and can show you its stones.',false,'Christian has not yet reached that city.']],
+  'Obstinate laughs, but Christian refuses to confuse the unseen with the unreal.'],
+ ['obstinate_2','“Look around! Almost everyone is staying here. Surely the crowd cannot all be mistaken.”',[
+  ['Numbers do not decide truth. The Book warns that the broad way can lead to destruction.',true],
+  ['The crowd is always wrong about every question.',false,'A crowd can be right or wrong; numbers by themselves prove neither.'],
+  ['We should believe whatever makes us most popular.',false,'Popularity cannot determine the reality of judgment.']],
+  'Christian directs him to the distinction between the broad road and narrow way.'],
+ ['obstinate_3','“This is fantasy. Only a fool would abandon his home for a story!”',[
+  ['Calling a claim foolish is no refutation; show where the Book’s warning or promise is false.',true],
+  ['I will insult you until you agree with me.',false,'Insults on either side do not establish the truth.'],
+  ['Your contempt proves that I must be right.',false,'An opponent’s attitude is not proof of a proposition.']],
+  'Obstinate refuses to examine the argument any further and turns back to the city.'],
+ ],'“I shall go home,” says Obstinate. He has heard Christian but will not follow.');}
+function merchant(){staged('THE MERCHANT',[
+ ['merchant_1','“If your soul is so burdened, buy your peace! Have you no coin to pay for it?”',[
+  ['No amount of gold can ransom the soul or remove the guilt of sin.',true],
+  ['A rich enough man can buy forgiveness from God.',false,'That confuses worldly wealth with divine pardon.'],
+  ['All money is wicked merely because it is money.',false,'The question is whether wealth can provide salvation.']],
+  'The merchant taps his coins impatiently. There is no price he can name for the soul.'],
+ ['merchant_2','“But is not success in trade the highest good a sensible man can pursue?”',[
+  ['No: even gaining the whole world would not repay the loss of one’s soul.',true],
+  ['Yes: a person’s highest good is always measured in coins.',false,'This mistakes lesser goods for the highest good.'],
+  ['A business succeeds only if it ignores the truth.',false,'The problem is treating worldly success as the supreme end.']],
+  'Christian continues through the market while the merchant returns to his scales.'],
+ ],'The merchant smiles at his purses. “I have things to sell, pilgrim.” Optional dialogue complete.');}
+function pliable(){if(!flag('obstinate_3'))return show('PLIABLE','“Let us hear what Obstinate has to say first,” says Pliable. He has been listening to your dispute.');staged('PLIABLE',[
+ ['pliable_1','“I am curious, Christian! What wonderful things does the Book say are waiting at our destination?”',[
+  ['It promises lasting life and an incorruptible inheritance. Read its testimony for yourself.',true],
+  ['It promises immediate riches to all who set out.',false,'Bunyan’s heavenly inheritance is not an earthly payday.'],
+  ['I invented these hopes merely to attract companions.',false,'Christian is appealing to what he reads, not to a useful fiction.']],
+  'Pliable is attracted by the descriptions of joy and life that do not end.'],
+ ['pliable_2','“And surely we can expect a pleasant walk all the way there, cannot we?”',[
+  ['There may be trials. The promise is worth following because it is true, not because the way is easy.',true],
+  ['Of course. There is no danger on the narrow road.',false,'Soon the Slough of Despond will test this very expectation.'],
+  ['We should stop believing if any trouble appears.',false,'An obstacle does not refute the promised destination.']],
+  'Pliable agrees to accompany Christian, but his resolve has not yet been tested.'],
+ ],'Pliable says, “Come then, Christian, let us travel together!” He follows, though his hopes are shallow.');}
+function evangelist(){if(!flag('wife_3')||!flag('child_2'))return show('EVANGELIST','“Flee from the wrath to come.” Before fleeing, warn thy family with love; they must choose whether to listen.');staged('EVANGELIST',[
+ ['evangelist_1','“Where do you seek deliverance, Christian: in your own goodness, in the wide road, or in the gate that has been appointed?”',[
+  ['In the narrow gate appointed for me, not in my own merits or a more popular road.',true],
+  ['In the belief that I am already better than my neighbors.',false,'Christian cannot remove his burden by self-justification.'],
+  ['In the easiest road, regardless of where it goes.',false,'Comfort does not determine the destination.']],
+  'Evangelist points toward the far fields and the little Wicket Gate.'],
+ ['evangelist_2','“Can you see the Wicket Gate from here? If not, what must direct you on the journey?”',[
+  ['I will follow the shining light and the direction of the Book, until I reach the gate.',true],
+  ['I shall follow whoever promises the shortest journey.',false,'Shortcuts often lead Christian astray.'],
+  ['I shall return to the City rather than begin.',false,'Christian must follow the light toward the appointed way.']],
+  'Evangelist gives Christian a parchment inscribed “Flee from the wrath to come” and points into the distance. “Keep that light in your eye, and go up directly thereto.”'],
+ ],'Evangelist has directed Christian to the Wicket Gate. Christian cries “Life! Life! Eternal life!” and turns toward the east.');}
+function watchman(){show('CITY WATCHMAN','“Why depart from a prosperous city?” The watchman blocks no road. The question is whether the city’s comfort can answer the Book’s warning.');}
+function noticeBoard(){show('A WARNING BOARD','“All is well. The City of Destruction is secure forever.” Christian asks: Does a comforting announcement make a statement true? The Book calls him to examine a different warning.');}
+function marketNotice(){show('MARKET NOTICE','FINE GOODS · FEASTS · HONORS · REWARDS. The streets are busy, but Christian remembers: “What does it profit a man, if he shall gain the whole world, and lose his own soul?” (Mark 8:36)');}
+function fieldboard(){show('SHINING LIGHT','Beyond the fields shines the light toward which Evangelist points. First receive his direction, then go forward.');}
+function pursuitboard(){show('THE PURSUIT ROAD','Christian has fled. Obstinate and Pliable have caught up with him, hoping to bring him back to the City of Destruction. The Slough lies beyond.');}
+function sloughSign(){show('SLOUGH OF DESPOND','A weathered post marks the marsh. The bog is fed by doubts, fears, guilty memories, and discouragements. The way through is real, but hard to see from the bank.');}
+function stoneGuide(){show('STONE MARKER','Someone has set a small marker near the far bank. The safest path is not broad. It appears in a line of pale stones across the mire.');}
+
+function helpRescue(){makeQuestion('help','Help','Christian has struggled toward the side of the Slough nearest the Wicket Gate, but cannot climb out because of his heavy burden. Help asks why he missed the steps. What does Christian say?',[['Fear followed me so hard that I rushed the nearest way, and fell into the mire. Please give me thy hand.',true],['I have no need of help. My own strength will save me.',false,'Christian cannot pull himself out, even after reaching the far side.'],['I must follow Pliable home, for he was right.',false,'Christian presses toward the Wicket Gate, not back home.']],"Help takes Christian’s hand, draws him out, and places him on sound ground. He tells Christian to continue his journey.",()=>{s.x=21;s.y=7;learn('sloughCrossed');save();});}
+function forkSign(){show('THE FORK IN THE ROAD','EAST → The Wicket Gate, according to Evangelist. NORTH ↑ The village of Morality, according to Worldly Wiseman. Christian listens to the promise of an easy cure and chooses the northern road.');}
+function wiseman(){
+ if(flag('worldly_3'))return show('MR. WORLDLY WISEMAN','“Why should you endure danger when Morality lies just north? Legality is a reputable man. His son Civility can help too.” Christian must see where this counsel leads.');
+ staged('MR. WORLDLY WISEMAN',[
+  ['worldly_1','“Why walk so burdened? Have you a wife and children? What relief are you seeking?” What is Christian’s real problem?',[
+   ['He is guilty and seeks deliverance from sin; comfort alone cannot lift his burden.',true],
+   ['He simply needs a pleasant house and good reputation.',false,'The burden represents Christian’s guilt, not a shortage of comfort.'],
+   ['The burden will fall off as soon as he stops reading the Book.',false,'Christian learned of his guilt from the Book; ignoring it would not remove sin.']],
+   'Worldly Wiseman sees Christian’s suffering but treats it as a problem to be cured by a more comfortable life.'],
+  ['worldly_2','“Evangelist’s road brings hunger, perils, swords, lions, and death. I can give thee a safer path.” Why is this persuasive?',[
+   ['It promises relief while avoiding the dangers of the appointed way.',true],
+   ['It proves every warning in the Book to be false.',false,'Wiseman does not disprove the Book; he seeks to redirect Christian.'],
+   ['It proves all suffering must be a sign that a road is wrong.',false,'Suffering by itself does not settle whether a road is true.']],
+   'Christian longs for relief. Wiseman promises safety, friendship, and content instead of sacrifice.'],
+  ['worldly_3','“In Morality dwells Mr. Legality, who removes burdens; his son Civility is just as capable. You could even bring your family there.” Which solution does he offer?',[
+   ['He proposes that respected moral living, instead of the appointed gate, can remove sin’s burden.',true],
+   ['He urges Christian to take the narrow gate Evangelist showed.',false,'The proposed cure replaces the gate with an attractive alternative.'],
+   ['He tells Christian to abandon every form of honest conduct.',false,'Bunyan criticizes relying on works for salvation, not honest living itself.']],
+   'Christian is persuaded. “Which way to this honest man’s house?” he asks. Wiseman points north toward the high hill.'],
+ ],'Wiseman repeats his promise of a quiet village. Christian has decided to leave the road and go NORTH.');
+}
+function moralityRent(){makeQuestion('moralityRent','HOUSES AND PROVISIONS','Morality offers vacant homes, cheap provisions, good neighbors, and a fine reputation. Why does this matter to Wiseman’s argument?',[
+ ['He offers worldly security as evidence that this is a better route to deliverance.',true],
+ ['Good homes are always evil.',false,'Ordinary earthly comforts are not the issue; they cannot forgive guilt.'],
+ ['Christian is required to purchase a house before going on.',false,'Bunyan describes Wiseman’s tempting offer, not a purchase Christian makes.']
+ ],'The comfortable village promises much, but it does not answer how guilt can be removed.');}
+function moralityLegality(){makeQuestion('moralityLegality','WAYMARK: MR. LEGALITY','The sign points toward the house of the respected Mr. Legality, said to lift burdens. What is the specific claim Christian hopes is true?',[
+ ['By obedience to the law, a man could become justified and free from his burden.',true],
+ ['Legality promises the forgiveness of sins entirely by Christ’s grace.',false,'Worldly Wiseman offers a supposed alternative to the appointed gate.'],
+ ['Legality claims that laws exist only to make roads longer.',false,'He represents confidence in law-observance as a ground of salvation.']
+ ],'Christian hopes Legality can do what no human obedience can accomplish. The house is still farther ahead, beyond the mountain.');}
+function moralityCivility(){makeQuestion('moralityCivility','WAYMARK: CIVILITY','If Mr. Legality is away, his son Civility is said to provide the same cure. What should the player recognize?',[
+ ['Good manners and upright conduct cannot themselves cancel guilt before God.',true],
+ ['Every polite neighbor is secretly wicked.',false,'The allegory concerns trusting civility for salvation, not condemning manners.'],
+ ['Politeness has no value in human affairs.',false,'Civility may be a social virtue; it is not atonement.']
+ ],'Civility sounds welcoming, but neither he nor his father can be reached past the looming mountain.');}
+function sinaiCliff(){show('MOUNT SINAI','The immense hill hangs above the path, dark and hot with fire. Christian’s burden seems heavier than it did on the narrow road. He fears the cliff will fall upon him. (Exodus 19; Hebrews 12:18–21)');}
+function evangelist2(){
+ if(!flag('sinai'))return show('EVANGELIST','Come closer to the mountain and behold where Worldly Wiseman’s counsel has led.');
+ staged('EVANGELIST',[
+ ['correction_1','“What dost thou here, Christian? Did I not direct thee to the Wicket Gate?” What was the FIRST evil in Worldly Wiseman’s advice?',[
+  ['He persuaded Christian to leave the way God had appointed.',true],
+  ['He taught Christian to be kind to his neighbors.',false,'The issue is forsaking the appointed way for a different basis of deliverance.'],
+  ['He reminded Christian that his family mattered.',false,'Family love is not the evil Evangelist exposes.']],
+  'Evangelist: Wiseman has turned you away from the narrow gate. (Luke 13:24)'],
+ ['correction_2','“He laboured to render the cross odious.” What was the SECOND evil in the counsel?',[
+  ['He made the Cross and its costly path appear hateful, preferring an easy escape.',true],
+  ['He explained that suffering always saves us by itself.',false,'Bunyan does not teach that pain merits forgiveness.'],
+  ['He taught Christian that the Cross is the only way of pardon.',false,'He urged Christian to avoid that way altogether.']],
+  'Evangelist: Wiseman prized comfort above the Cross and the commands of Christ. (Galatians 6:12)'],
+ ['correction_3','“He set thy feet in the way that leads to death.” What is the THIRD evil, and why does Mount Sinai threaten Christian?',[
+  ['The law exposes condemnation; trusting law-observance for justification leaves the burden in place.',true],
+  ['The law is itself wicked and should never be obeyed.',false,'God’s law is good; a sinner cannot be justified by personal obedience to it.'],
+  ['Morality is dangerous only because of the steep road and loose stones.',false,'The mountain is an allegory of bondage and judgment under the law.']],
+  'Evangelist: Legality and Civility cannot save. The fiery mountain symbolizes the curse upon sinners who seek justification by works. (Galatians 4:24–26; 3:10)'],
+ ['correction_4','If the law is God’s good law, why can it not remove Christian’s burden?',[
+  ['The law reveals sin and demands obedience, but cannot justify a guilty sinner by his own works.',true],
+  ['Because God gave a defective law with false commands.',false,'The problem lies in sinful people, not in the goodness of God’s law.'],
+  ['Because law and righteousness have no relation.',false,'The law expresses righteousness; it cannot erase past guilt by future effort.']],
+  'Evangelist: “By the deeds of the law there shall no flesh be justified.” (Romans 3:20; Galatians 2:16)'],
+ ['corrected','Christian is ashamed. “Is there hope? May I go back to the Wicket Gate?” What does Evangelist tell him?',[
+  ['Yes. Forsake this false path; Good-will will receive the repentant pilgrim.',true],
+  ['No. One wrong turning means Christian can never return.',false,'Evangelist specifically encourages Christian to return to the gate.'],
+  ['Yes, but only after Christian earns forgiveness by completing the law.',false,'That would repeat Worldly Wiseman’s error.']],
+  'Evangelist takes Christian by the hand, speaks of forgiveness, and bids him return. With a smile and a farewell, he sends Christian back SOUTH toward the true road.'],
+ ],'“Turn back to the Wicket Gate. Good-will will receive thee.” Walk SOUTH through Morality road, then EAST from the original crossroads.');
+}
+function castleWarning(){show('THE CASTLE ROAD','The castle of Beelzebub rises above the path. Its archers try to strike down pilgrims as they approach the Wicket Gate. Seek the little gate ahead; do not return to Morality.');}
+function gateInscription(){if(!flag('gateInscription'))learn('gateInscription');show('THE INSCRIPTION','Above the little gate are the words: “Knock, and it shall be opened unto you.” — Matthew 7:7–8. Christian has no merit to offer; he may ask to be received. Stand by the door and press A to knock.');}
+function gateKnock(){
+ if(flag('gateEntry')){s.gateZone=2;s.x=2;s.y=7;s.face='right';save();updateHUD();return show('GOOD-WILL WELCOMES CHRISTIAN','You have already been received at this gate. Good-will gladly welcomes you into the safe courtyard once more.');}
+ if(!flag('gateInscription'))return gateInscription();
+ if(s.knocks>=3)return goodwill();
+ s.knocks++;save();tone(150,.07);setTimeout(()=>tone(220,.08),90);updateHUD();
+ if(s.knocks===1)show('KNOCK — FIRST PETITION','Christian knocks at the Wicket Gate and waits. No answer is heard yet. He does not turn back.');
+ else if(s.knocks===2)show('KNOCK — AGAIN','Christian knocks again, pleading for mercy. He knows himself an undeserving sinner, yet the inscription bids him knock.');
+ else {learn('gateKnock');show('KNOCK — GOOD-WILL ANSWERS','At the third knock, a grave man appears behind the little door. “Who is there? From whence do you come, and what would you have?” Speak with Good-will or press A at the door again.');}
+}
+function goodwill(){
+ if(s.knocks<3)return gateKnock();
+ makeQuestion('gateEntry','GOOD-WILL','“Who is there? Whence do you come? What would you have?” How should Christian answer?',[
+ ['I am a poor burdened sinner from the City of Destruction, going to Mount Zion to escape the wrath to come. May I enter by this gate?',true],
+ ['I have proven that I am morally superior to those who remained in the city; surely I deserve entrance.',false,'Christian describes himself as a burdened sinner seeking mercy, not as a man who has earned admission.'],
+ ['I come merely to inspect this gate and judge whether its keeper is worthy of my approval.',false,'Christian sincerely seeks deliverance and asks for entry.']
+ ],'Good-will says, “I am willing with all my heart.” He opens the little door and suddenly pulls Christian inside, out of reach of Beelzebub’s arrows.',()=>{
+    s.gateZone=2;s.x=2;s.y=7;s.face='right';flash=25;save();updateHUD();
+    show('I REJOICE AND TREMBLE','“What means this?” Christian asks. Good-will points to the castle: its archers seek to destroy pilgrims before they can enter. Christian replies, “I rejoice and tremble.” His burden is still upon his back.');
+ });
+}
+function goodwillInside(){
+ staged('GOOD-WILL',[
+ ['gateTalk_1','“Who directed thee to this gate and bid thee knock?”',[
+ ['Evangelist instructed me to come here, knock, and seek direction for the way.',true],
+ ['I discovered this gate by the wisdom of Mr. Legality.',false,'Legality was the false turn suggested by Worldly Wiseman.'],
+ ['I needed no direction and found my own way by merit.',false,'Christian acknowledges Evangelist’s direction.']],
+ 'Good-will: “An open door is set before thee, and no man can shut it.” (Revelation 3:8)'],
+ ['gateTalk_2','“How came it that thou didst come alone? Did any of thy family know?”',[
+ ['My wife, children, and neighbors called me back. I warned them, but they did not come.',true],
+ ['No one knew I left, and I never warned them.',false,'Christian pleaded with his family, and they called after him to return.'],
+ ['My family have already reached the Celestial City before me.',false,'Christian travels alone at this point in Bunyan’s first part.']],
+ 'Good-will hears with sorrow that Christian’s family and neighbors refused to follow.'],
+ ['gateTalk_3','“Did any follow thee? And why did Pliable not come all the way?”',[
+ ['Obstinate turned back; Pliable followed until the Slough, then abandoned the journey when trouble came.',true],
+ ['Pliable defeated Apollyon and now waits in the Celestial City.',false,'Pliable left at the Slough of Despond.'],
+ ['Pliable left because the appointed road was proved false.',false,'Pliable’s difficulty did not disprove the promise.']],
+ 'Good-will laments that Pliable valued the hope of glory so little that he refused to endure difficulties.'],
+ ['gateTalk_4','“But art thou any better than Pliable? What befell thee upon the road?”',[
+ ['No. I too strayed, following Worldly Wiseman toward Legality until Sinai terrified me; Evangelist brought me back.',true],
+ ['Yes. Unlike Pliable, I have never been tempted to turn away.',false,'Christian admits his own grave wrong turn and will not boast.'],
+ ['The Law removed my burden at Mount Sinai, so I no longer need the Cross.',false,'Sinai did not deliver Christian; his burden remains.']],
+ 'Good-will acknowledges the danger of Sinai and rejoices that Christian escaped and returned.'],
+ ['gateTalk_5','Good-will points ahead. “The way is straight and narrow. There are many crooked ways joining it. And what of the burden still upon thy back?”',[
+ ['I must keep to the narrow way. I shall carry the burden until the place of deliverance, where it will fall away. Next I should visit the Interpreter.',true],
+ ['I may choose any broad turning, for all roads lead to Mount Zion.',false,'Good-will distinguishes the true road from the crooked, wide ways.'],
+ ['My burden falls away because I gave the correct answers at the gate.',false,'Bunyan places the removal of the burden at the Cross, after the Interpreter’s house.']],
+ 'Good-will directs Christian to the Interpreter’s house. The burden remains; it will fall at the Cross. Follow the eastern narrow road.']
+ ],'“Go forward to the Interpreter. Keep to the straight and narrow way. God-speed, Christian!”');
+}
+function straightWay(){show('THE NARROW WAY','Good-will describes a straight and narrow road, cast up by the patriarchs, prophets, Christ, and his apostles. Though crooked and wide roads join it, it alone is the appointed path.');}
+function portrait(){makeQuestion('portrait','The Grave Portrait','You behold the picture of a grave person. His eyes are lifted toward heaven, the best of books is in his hand, the law of truth is written on his lips, and the world lies behind him. What does the portrait signify?',[['A faithful minister who speaks truth plainly, loves heaven more than the world, and guides pilgrims in the right way.',true],['A scholar who is admired chiefly for his eloquence and worldly success.',false,'The picture points beyond reputation to faithfulness and heavenly mindedness.'],['Any respectable citizen, so long as he appears serious.',false,'The Interpreter means more than outward gravity.']],"You learn what sort of guide Christian should heed: one whose eyes are heavenward and whose lips speak truth.");}
+function dust(){if(!flag('portrait'))return show('INTERPRETER','First behold the portrait of a true guide; then see what follows.');makeQuestion('dust','The Dusty Room','Sweeping the dusty room fills the air with choking dust. Then water is sprinkled and it is cleansed. What does this signify?',[['The Law exposes and stirs up sin; the Gospel brings cleansing grace.',true],['A clean house alone makes a person righteous.',false,'The room is an allegory of the unsanctified heart.'],['The dirt disappears when we pretend not to see it.',false,'The dust is not overcome by denial.']],"You learn that the Law uncovers inward corruption, while the Gospel brings cleansing.");}
+function fire(){if(!flag('patience'))return show('INTERPRETER','First behold Passion and Patience. Then come and see the fire that cannot be extinguished.');makeQuestion('fire','The Fire Behind the Wall','A man pours water on a fire, but it burns higher. Another secretly pours oil into it from behind the wall. Who sustains the fire?',[['Christ sustains grace in the heart, though the devil tries to extinguish it.',true],['The fire survives by its own strength without help.',false,'The concealed supply of oil is essential to Bunyan’s lesson.'],['The water is the Gospel and puts faith out.',false,'In this scene, the one throwing water represents the devil.']],"You learn that the fire of grace is sustained by Christ, even when his help is hidden from sight.");}
+function patience(){makeQuestion('patience','Passion and Patience','Passion demands treasure at once; Patience waits for better things to come. Passion’s treasure is soon exhausted. What should Christian learn?',[['The things of this age pass away; the pilgrim waits for the lasting inheritance.',true],['Whoever accumulates the most treasure is most blessed.',false,'Passion squanders the treasure and is left with rags.'],['A pilgrim should refuse every good thing in life.',false,'The contrast concerns temporary goods versus the better, enduring inheritance.']],"You learn why present pleasures cannot compare with the better things to come.");}
+function valiant(){if(!flag('fire'))return show('INTERPRETER','First behold the fire sustained by secret oil. Then come and see the valiant man.');makeQuestion('valiant','The Valiant Man','A man asks what he must do to enter a palace full of glory, though armed men stand to oppose him. He puts on a helmet, draws his sword, fights through them, and enters. What does this teach Christian?',[['The kingdom is entered by holy resolution and perseverance through opposition, not by cowardly turning back.',true],['Only those who rely on physical force can enter heaven.',false,'Bunyan’s scene is about spiritual courage, not earthly violence.'],['A wise pilgrim should delay until no enemies remain.',false,'The valiant man enters despite danger.']],"You learn that the pilgrim must press on courageously, even when many would frighten him from the way.");}
+function cage(){makeQuestion('cage','The Man in the Iron Cage','A man sits despairing. He once professed faith but says he has hardened his heart. How is this scene meant to instruct Christian?',[['It is a warning to watch, remain sober, and not presume upon grace.',true],['It teaches Christian never to warn anyone about sin.',false,'The Interpreter intends it to serve as a solemn warning.'],['It shows the right way to escape is to break a physical lock.',false,'The iron cage represents a spiritual condition, not a mechanical puzzle.']],"You remember the Interpreter’s warning against hardening the heart and yielding to sin.");}
+function dream(){if(!flag('cage'))return show('INTERPRETER','First behold the man in the iron cage. Then see the man who awoke trembling from his dream.');makeQuestion('dream','The Awakened Man','A man rises from sleep trembling. He says the day of judgment is coming, the heavens are hot, and he is not ready to meet the Judge. Why does the Interpreter show Christian this scene?',[['To keep Christian awake to the reality of judgment, so that he will seek mercy now and not sleep in sin.',true],['To teach that terror itself is enough to save a person.',false,'Fear may awaken, but the scene chiefly warns Christian to be watchful.'],['To show that dreams are always divine revelations for everyone.',false,'The emphasis is moral warning, not a theory about all dreams.']],"You learn to remember the coming judgment and to walk watchfully before God.");}
+function interpreterIntro(){show('Interpreter','Come in, and behold the things that shall be profitable to thee. In this house thou shalt see emblems to help thee on thy way. Learn well what each room means, and then go forward.');}
+function interpreterFinal(){if(allInterpreterLessons()){if(!flag('interpreter'))learn('interpreter');show('Interpreter','These things are to be remembered upon the road. Keep them in thy mind: heed faithful guides, let the Gospel cleanse what the law exposes, wait for better things, believe that Christ secretly sustains grace, be valiant in the face of opposition, fear a hardened heart, and remember the judgment to come. Now go on toward the place of deliverance.');}else show('Interpreter','There are still lessons for thee in this house. Search every chamber carefully.');}
+function cross(){if(!flag('cross'))fallAtCross();else show('The Cross','At this place your burden rolled away into the sepulchre. The Shining Ones stand ready to speak with you.');}
+function fallAtCross(){if(flag('cross'))return;learn('cross');flash=26;show('THE PLACE OF DELIVERANCE','As Christian comes to the Cross, the burden slips from his shoulders and rolls into the sepulchre below. At last he is free of that burden! Three Shining Ones draw near.');}
+function angel1(){if(!flag('angel1'))learn('angel1');show('First Shining One','Peace be with thee. Thy sins are forgiven. Christian lifts his face and rejoices.');}
+function angel2(){if(!flag('angel1'))return show('SHINING ONES','First hear the word of forgiveness.');if(!flag('angel2'))learn('angel2');show('Second Shining One','The second Shining One strips Christian of his rags and clothes him in a change of raiment.');}
+function angel3(){if(!flag('angel2'))return show('SHINING ONES','First receive the new raiment.');if(!flag('angel3'))learn('angel3');show('Third Shining One','The third Shining One sets a mark on Christian’s forehead and gives him a sealed roll, to look upon as he travels and present at the Celestial Gate.');}
+function warnSleeper(id,name,reply){if(!flag('angel3'))return show('CHRISTIAN','First stay at the Cross, and receive the gifts of the Shining Ones.');if(!flag(id))learn(id);show(name,'Christian urges the sleeper to wake: a bottomless gulf lies beneath, and a roaring lion may devour him. He even offers to loosen the irons on his heels. But '+name+' answers, “'+reply+'” and lies down to sleep again.');}
+function hillFormalist(){
+ if(!flag('hillForm1'))return makeQuestion('hillForm1','Formalist','Christian sees Formalist and Hypocrisy scrambling over the wall of Salvation. Formalist says that visiting the wicket gate takes too long; a shortcut is customary. Why is Christian troubled?',[
+  ['There is no distinction between entering through the door and climbing the wall.',false,'Bunyan makes the distinction decisive.'],
+  ['The Lord of the way commanded entry by the gate. A shortcut over the wall refuses that direction.',true],
+  ['Climbing a wall makes a man too tired to continue.',false,'It is disobedience and a false claim to entrance, not tiredness, that concerns Christian.']
+ ],'Christian warns Formalist that the appointed entrance cannot be replaced by a shortcut.');
+ if(!flag('hillForm2'))return makeQuestion('hillForm2','Formalist','Formalist laughs: “You are upon the same road as we are. What is the difference between you and us, except your clothes?”',[
+  ['The garment, mark and sealed roll were given freely at the Cross; outward appearance is not the ground of salvation.',true],
+  ['A borrowed garment makes one better than those who wear other clothes.',false,'The gifts testify to grace, not superiority or fashion.'],
+  ['There is no reason for Christian to cherish the sealed roll.',false,'The roll was to comfort him and be shown at the Celestial Gate.']
+ ],'Christian explains that his garment and sealed roll are gifts received through the appointed way.');
+ show('Formalist','I shall follow the road as I see fit. My countrymen have always taken the shorter way.');
+}
+function hillHypocrisy(){
+ if(!flag('hillForm1'))return show('Hypocrisy','“First hear Formalist’s argument. We arrived by the wall as our people have done for generations.”');
+ if(!flag('hillHyp1'))return makeQuestion('hillHyp1','Hypocrisy','Hypocrisy claims that his people have climbed the wall for a thousand years. Does the age of this custom make it acceptable to the Lord of the way?',[
+  ['Yes; a custom becomes righteous merely by lasting long enough.',false,'An old error does not become right through repetition.'],
+  ['Yes; all religious customs have authority equal to the Lord’s command.',false,'That is precisely the dispute Bunyan is illustrating.'],
+  ['No; custom cannot overturn the revealed rule of entry, whatever its antiquity.',true]
+ ],'Hypocrisy dismisses the warning. Christian distinguishes God’s rule from invented custom.');
+ show('Hypocrisy','The way is wide enough for all of us. Why make such a dispute over the gate?');
+}
+function hillWall(){show('THE WALL OF SALVATION','Two travelers have climbed over the wall rather than entering by the Wicket Gate. They claim their old custom is as good as the appointed entrance. Christian calls their confidence into question. (John 10:1)');}
+function hillSpring(){if(!flag('hillSpring'))learn('hillSpring');show('THE SPRING','At the very foot of Hill Difficulty lies a spring. Christian stoops to drink, taking refreshment before the ascent. Its water does not grant salvation: the traveler must still follow the right road.');}
+function hillFork(){
+ if(!flag('hillSpring'))return show('THREE ROADS','The spring is nearby. Christian takes refreshment before choosing the climb.');
+ if(flag('hillFork'))return show('THREE ROADS','The middle way rises steeply as DIFFICULTY. On the left, DANGER enters a dense wood. On the right, DESTRUCTION disappears among dark mountains. Christian must take the difficult way.');
+ makeQuestion('hillFork','THREE ROADS','At the foot of the hill, the road divides. Formalist looks toward an easier left path; Hypocrisy prefers the right. Which way does Christian take?',[
+  ['The left-hand road named Danger: it seems less steep.',false,'The easy left road disappears into a great wood.'],
+  ['The central road named Difficulty: the narrow way climbs straight up the hill.',true],
+  ['The right-hand road named Destruction: its broad field looks easier.',false,'The right road ends among dark mountains, where a traveler falls and rises no more.']
+ ],'One stranger takes Danger, and the other takes Destruction. Bunyan does not name which took which. Christian resolves to climb the steep middle way.');
+}
+function hillDanger(){show('DANGER — THE LEFT PATH','One of the two strangers turns into the great wood, believing the easier route will meet the narrow way again. Instead, the trees swallow the road. Christian sees the error and returns to the marked fork.');}
+function hillDestruction(){show('DESTRUCTION — THE RIGHT PATH','The other stranger walks across a broad field of dark mountains, trusting the easier route. Far off he stumbles and falls, never to rise again. This is not the way to life.');}
+function hillArbor(){
+ if(flag('hillMissing')&&!flag('hillRecovered')){
+  if(!flag('hillRepent'))return show('THE ARBOR','The roll is missing. Christian must first acknowledge his foolish sleep, ask forgiveness, and return carefully to seek what was lost.');
+  return makeQuestion('hillRecovered','BENEATH THE SETTLE','Christian returns to the arbor where he slept, searching where he had sat. Where does he finally discover the sealed roll?',[
+   ['In the forest beyond the left fork.',false,'Christian did not leave the narrow way for the forest.'],
+   ['Inside the spring at the hill’s foot.',false,'He held the roll at the arbor, not the spring.'],
+   ['Underneath the seat of the arbor, where it fell during his sleep.',true]
+  ],'The roll lies beneath the settle! Christian takes it up with trembling joy, gives thanks, and resumes his climb.');
+ }
+ if(!flag('hillSleep')){
+  learn('hillSleep');show('THE ARBOR — UNTIMELY SLEEP','The Lord of the hill made this arbor for weary travelers. Christian sits to rest, reads his sealed roll, and admires his new garment. He falls into deep sleep. While he sleeps, the roll slips from his hand beneath the seat. A voice awakens him: “Go to the ant, thou sluggard.” He rises and hurries toward the hilltop.');
+  return;
+ }
+ show('THE ARBOR','Christian remembers resting here. He hurries onward, unaware that the sealed roll slipped from his hand as he slept.');
+}
+function hillTimorous(){
+ if(flag('hillTimorous'))return show('Timorous','“I have seen increasing danger and will go no farther.” He runs down the hill.');
+ makeQuestion('hillTimorous','Timorous','Timorous and Mistrust race downhill. Timorous says the farther they went, the greater the dangers they met. What does Christian recognize about going back?',[
+  ['Returning to the doomed City of Destruction promises certain ruin; he must press toward life.',true],
+  ['All roads must lead to the same destination in the end.',false,'Bunyan distinguishes the way of life from paths ending in ruin.'],
+  ['If a path is difficult, it cannot be the way of salvation.',false,'This hill is named Difficulty precisely because the true way is hard.']
+ ],'Christian admits the dangers are frightening but will not turn back to the city prepared for judgment.',()=>hillCheckWarnings());
+}
+function hillMistrust(){
+ if(flag('hillMistrust'))return show('Mistrust','“There are lions just ahead. Who can know if they are sleeping?” He flees down the hill.');
+ makeQuestion('hillMistrust','Mistrust','Mistrust reports two lions near a palace farther on. He does not know whether they sleep or wake. What does Christian decide?',[
+  ['The lions guarantee there is no hope of reaching the city.',false,'A threatening obstacle does not overturn the promised destination.'],
+  ['The safest choice is always to follow a frightened crowd backward.',false,'Timorous and Mistrust run back; Christian presses onward.'],
+  ['To go back is certain death; to go forward is danger, but everlasting life lies beyond.',true]
+ ],'Christian chooses to go forward despite fear. Timorous and Mistrust depart downhill.',()=>hillCheckWarnings());
+}
+function hillCheckWarnings(){
+ if(hillWarningsDone()&&!flag('hillMissing')){
+  learn('hillMissing');
+  show('THE SEALED ROLL IS MISSING','After hearing of the lions, Christian reaches into his bosom for the sealed roll, seeking comfort. It is gone! He remembers his untimely sleep at the arbor and grieves. He must return to look for it.',hillRepent);
+ }
+}
+function hillRepent(){
+ if(flag('hillRepent'))return;
+ makeQuestion('hillRepent','CHRISTIAN','Christian has lost the roll that comforts him and must be presented at the Celestial Gate. What is the right response to his careless sleep?',[
+  ['Ignore the loss. The roll can be replaced by pretending it is still present.',false,'Christian does not pretend to possess the missing roll.'],
+  ['Ask forgiveness for his foolish sleep and retrace his steps to the arbor.',true],
+  ['Blame Timorous and Mistrust for making him anxious.',false,'The loss happened at the arbor before he met them.']
+ ],'Christian kneels, asks forgiveness, and turns back down the difficult hill to search beneath the arbor seat.');
+}
+function hillPalace(){
+ if(!flag('hillRecovered'))return show('DISTANT PALACE','A great building can be seen at the road’s end; the threats of lions remain ahead. Christian must first recover the sealed roll.');
+ show('PALACE BEAUTIFUL','A stately house stands ahead in the gathering dark. Two lions wait near the narrow passage to its gate. Watchful the porter stands ready to counsel true pilgrims.');
+}
+function lionWarn(){show('THE LIONS',flag('watchfulLion')?'The lions are chained and cannot reach the middle of the path. Christian must go forward in faith.':'The lions seem ready to rend any traveler. Christian hesitates until the porter calls from his lodge.');}
+function lionPath(){show('THE NARROW PASSAGE','This is the middle of the path between the lions. When Watchful has told Christian how to pass safely, he may go forward here.');}
+function porterBoard(){show('WATCHFUL THE PORTER','Watchful keeps the lodge by the gate of Palace Beautiful. He discerns pilgrims and directs them safely through the danger.');}
+function watchfulLions(){makeQuestion('watchfulLion','Watchful the Porter','Christian draws back at the sight of the lions. What does Watchful tell him?',[['The lions are chained. Keep to the middle of the path and you will not be harmed.',true],['Wait until morning and the lions will disappear on their own.',false,'Watchful directs Christian to proceed at once by the appointed path.'],['Fight the lions to prove your courage.',false,'Christian is not told to attack the lions, but to trust the safe path.']],"Watchful calls from the lodge: the lions are chained for the trial of faith. Keep to the middle of the path and come forward.");}
+function watchfulLodge(){staged('WATCHFUL',[
+ ['watchful1','“Whence come you, and how did you arrive here so late?”',[['I come from the City of Destruction, by the Wicket Gate and the way of difficulty, though I was once turned aside by Worldly Wiseman.',true],['I wandered here by chance without any particular direction.',false,'Watchful must know whether Christian has come by the appointed way.'],['I climbed in over the wall, as Formalist and Hypocrisy did.',false,'Those who climb over the wall do not enter rightly.']], 'Watchful hears Christian’s story and recognizes him as a pilgrim who has truly come by the gate.']
+ ],'Watchful receives Christian gladly and calls to the maidens of the house.');}
+function discretion(){makeQuestion('discretion','Discretion','Discretion asks Christian why he undertook this pilgrimage. What answer accords with Bunyan’s story?',[['The burden of sin and fear of judgment drove him to seek deliverance.',true],['He chiefly desired fame for attempting a difficult journey.',false,'Christian did not set out to win praise.'],['He hoped the journey would make him morally superior to others.',false,'Christian knows he needs mercy, not boasting.']],"Discretion understands Christian’s account and sees that his pilgrimage began with a true sense of need.");}
+function piety(){makeQuestion('piety','Piety','Piety asks what first made Christian willing to leave his home. Which answer is best?',[['The Book convinced him of judgment to come and of a way of life beyond destruction.',true],['A mere taste for novelty and adventure.',false,'His departure was not restless curiosity.'],['The opinion of neighbors who admired him.',false,'His neighbors mostly mocked or opposed him.']],"Piety rejoices that the Word of God, not fashion, sent Christian on his way.");}
+function prudence(){makeQuestion('prudence','Prudence','Prudence asks what thoughts most comfort Christian when he lies down to sleep. What should he say?',[['Thoughts of Christ, the Celestial City, and the mercy shown him on the road.',true],['Thoughts only of earthly ease and present safety.',false,'Prudence is asking whether Christian’s mind is set above.'],['Thoughts of revenge against those who laughed at him.',false,'Christian is not to nourish spite against his old neighbors.']],"Prudence hears that Christian’s heart is set upon better things and is pleased.");}
+function charity(){makeQuestion('charity','Charity','Charity asks about Christian’s wife and children. What answer should he give?',[['He loved them and would gladly have had them come, but they refused his warning.',true],['He despised them and gladly abandoned them.',false,'Christian grieved that they would not come.'],['He never spoke to them at all before leaving.',false,'He warned them repeatedly at the beginning of the story.']],"Charity understands that Christian’s departure was sorrowful, not hard-hearted.");}
+function palaceTreasures(){if(!palaceLadiesDone())return show('THE HOUSE','First answer the questions of Discretion, Piety, Prudence, and Charity.');if(!flag('palaceTreasures'))learn('palaceTreasures');show('TREASURES OF THE HOUSE','The household shows Christian ancient records, notable victories, and weapons once wielded for the King: memorials of saints who fought bravely before him. He beholds treasures laid up for those who continue faithfully.');}
+function palaceArmor(){if(!flag('palaceTreasures'))return show('THE ARMORY','First behold the treasures and memorials of the house.');makeQuestion('palaceArmor','THE WHOLE ARMOR','Before Christian departs, the household arms him from head to foot. What does this signify?',[['The pilgrim must wear the whole armor of God before descending to the battle with Apollyon.',true],['After the Cross, no further vigilance or preparation is necessary.',false,'Grace does not abolish the need for spiritual watchfulness.'],['Physical weapons alone will win the pilgrim’s victory.',false,'The armor is spiritual, suited to a spiritual conflict.']],"Christian is armed from head to foot for the conflict that lies ahead in the Valley of Humiliation.");}
+
+// APOLLYON: cinematic, multi-stage boss fight. Combat projectiles and temporary
+// animation state live in memory; flags, hit points and chapter milestones autosave.
+let flames=[],battleCounter=0,attackCooldown=0,battleIFrames=0,bossIFrames=0,shieldHeld=false,bossSignal='',bossSignalUntil=0;
+const isArena=()=>s.map===8&&s.valleyZone===1;
+const combatOn=()=>isArena()&&s.battlePhase==='combat';
+function shout(message,duration=100){bossSignal=message;bossSignalUntil=frame+duration;}
+function valleyFarewell(){makeQuestion('valleyDescent','THE DESCENT','Watchful reminds Christian of the valley below. How should an armed pilgrim enter it?',[
+ ['Humbly, trusting the strength of the Lord and keeping on the appointed path.',true],
+ ['Boasting that his own goodness makes him invincible.',false,'The whole armor is given by grace, not earned through self-congratulation.'],
+ ['Turning back whenever a trial appears.',false,'The narrow path goes forward through hardship.']
+ ],'Christian goes down a steep slope, equipped from head to foot, into a valley where Apollyon awaits.');}
+function startApollyon(){
+ if(flag('apollyonVictory'))return show('AFTER THE BATTLE','Apollyon has fled away. Go toward the far side of the valley to be healed.');
+ if(flag('apollyon_3')){if(s.battlePhase==='ready')beginBattle();return;}
+ staged('APOLLYON',[
+ ['apollyon_1','“I am the prince of the City of Destruction. Thou wast born in my dominions! To whom dost thou now belong?”',[
+  ['I once served thy dominions, but I have given myself to another King, the Prince of the Celestial City.',true],
+  ['I belong to no lord and need answer to no one.',false,'Christian confesses a new Lord, not autonomy.'],
+  ['I can safely serve two princes with opposite claims.',false,'Apollyon and the King of the Celestial City are opposed.']],
+ 'Christian declares allegiance to the Prince whose service offers life.'],
+ ['apollyon_2','“Thou hast been unfaithful! Thou didst fall in the Slough, turn aside to Sinai, and lose thy roll. Why should thy Prince keep thee?”',[
+  ['All this is true, and more besides; but my Prince is merciful and ready to pardon.',true],
+  ['I have never failed since I left the city.',false,'Christian does not deny his real failures.'],
+  ['My merits have purchased forgiveness.',false,'Christian trusts his Prince’s pardon, not his own merits.']],
+ 'Christian confesses his failures and appeals to the King’s mercy.'],
+ ['apollyon_3','“Turn back and serve me! I hate this Prince and all who follow him.” What must Christian do?',[
+  ['Stand my ground: I have no armor for my back, and I will keep faith with my King.',true],
+  ['Flee and turn my back to the darts.',false,'Christian knows he has no armor for his back.'],
+  ['Abandon the King until the danger passes.',false,'That would yield to Apollyon’s temptation.']],
+ 'Apollyon roars and casts a flaming dart! Christian lifts his shield and draws the sword of the Spirit.']
+ ],'Christian stands his ground against the Destroyer.',()=>{});
+ // staged() does not accept an extra callback. Begin the battle on the first
+ // animation frame after the last response is dismissed.
+}
+function beginBattle(){if(!isArena()||flag('apollyonVictory'))return;
+ s.battlePhase='combat';s.hp=9;s.bossHp=12;s.x=3;s.y=7;s.face='right';
+ flames=[];battleCounter=0;attackCooldown=0;bossIFrames=0;battleIFrames=75;
+ save();updateHUD();shout('THE BATTLE BEGINS — SHIELD THE DARTS!',150);tone(145,.25,.08);
+}
+function restartBattle(){s.battleAttempts=(s.battleAttempts||0)+1;beginBattle();}
+function battleDamage(){if(battleIFrames>frame)return;
+ if(shieldHeld && s.face==='right') {tone(690,.05,.025);shout('THE SHIELD TURNS THE DART!',50);return;}
+ battleIFrames=frame+70;s.hp=Math.max(0,s.hp-1);flash=11;tone(130,.21,.06);save();updateHUD();shout(s.hp===7?'CHRISTIAN IS WOUNDED IN HIS HEAD!':s.hp===5?'CHRISTIAN IS WOUNDED IN HIS HAND!':s.hp===3?'CHRISTIAN IS WOUNDED IN HIS FOOT!':'A FLAMING DART WOUNDS CHRISTIAN!',85);
+ if(s.hp===0){s.battlePhase='defeated';flames=[];show('CHRISTIAN IS NEARLY SPENT','Christian is sorely wounded. This attempt ends, but the player may try again from the beginning of the fight. Return with the whole armor and remember his Prince’s promises.',()=>restartBattle());}
+}
+function battleTick(){
+ if(!combatOn()||dialog||menu)return;
+ battleCounter++;if(attackCooldown>0)attackCooldown--;
+ const rate=s.bossHp>6?75:43;
+ if(battleCounter%rate===0){
+  const origin={x:15.2,y:6.5+Math.sin(frame/38)*1.1};
+  const dx=(s.x+.5)-origin.x,dy=(s.y+.5)-origin.y,len=Math.max(0.1,Math.hypot(dx,dy));
+  const speed=s.bossHp>6?.10:.14;
+  flames.push({x:origin.x,y:origin.y,vx:dx/len*speed,vy:dy/len*speed});
+  if(s.bossHp<=6&&battleCounter%86===0)flames.push({x:origin.x,y:origin.y+.65,vx:-.12,vy:.015});
+  shout(s.bossHp>6?'APOLLYON CASTS A FLAMING DART!':'DARTS AS THICK AS HAIL!',55);
+ }
+ for(const f of flames){f.x+=f.vx;f.y+=f.vy;
+  if(Math.abs(f.x-(s.x+.5))<.53&&Math.abs(f.y-(s.y+.5))<.53){
+   if(shieldHeld && s.face==='right'){f.x=-30;tone(720,.06,.025);shout('THE SHIELD CATCHES THE DART!',40);}
+   else {f.x=-30;battleDamage();}
+  }
+ }
+ flames=flames.filter(f=>f.x>0&&f.x<23.9&&f.y>1.7&&f.y<12.4);
+}
+function swordAttack(){
+ if(!isArena()||dialog||menu)return;
+ if(s.battlePhase==='fallen'){shout('THE SWORD HAS FALLEN! RECOVER IT!',90);return;}
+ if(s.battlePhase!=='combat'&&s.battlePhase!=='finale')return;
+ if(attackCooldown>0)return;attackCooldown=16;
+ const nearBoss=(s.x>=12&&s.x<=15&&s.y>=4&&s.y<=10&&s.face==='right');
+ if(!nearBoss){shout('APPROACH APOLLYON AND FACE RIGHT!',50);tone(270,.07);return;}
+ if(s.battlePhase==='finale')return finalStrike();
+ if(bossIFrames>frame)return;
+ s.bossHp--;bossIFrames=frame+18;flash=6;tone(310,.12,.05);shout(s.bossHp>6?'THE SWORD OF THE SPIRIT STRIKES!':'APOLLYON RECOILS FROM THE WORD!',70);
+ if(s.bossHp===6)shout('THE DARTS COME THICK AS HAIL!',120);
+ save();updateHUD();
+ if(s.bossHp<=0){
+  s.battlePhase='fallen';s.x=7;s.y=8;s.face='right';s.bossHp=0;
+  flames=[];save();updateHUD();tone(105,.40,.09);
+  show('THE DREADFUL FALL','After a long combat, Apollyon wrestles Christian to the ground. His sword flies from his hand! The Destroyer cries, “I am sure of thee now.” Christian has only a moment to reach the fallen sword near the center of the field.');
+ }
+}
+function recoverSword(){if(s.battlePhase!=='fallen')return show('THE SWORD','The sword of the Spirit is not yet lost.');
+ makeQuestion('apollyonSword','THE FALLEN SWORD','Christian stretches out his hand for the sword. What Scripture does he speak as he rises?',[
+ ['“Rejoice not against me, O mine enemy: when I fall, I shall arise.” (Micah 7:8)',true],
+ ['“A soft answer turneth away wrath.”',false,'In Bunyan’s account Christian takes up Micah 7:8 at the decisive moment.'],
+ ['“Let us eat and drink, for tomorrow we die.”',false,'This is surrender, not faith.']],
+ 'Christian grasps his sword, rises, and gives Apollyon a dreadful thrust!',()=>{
+ s.battlePhase='finale';s.hp=Math.max(2,s.hp);s.x=13;s.y=7;s.face='right';
+ attackCooldown=0;save();updateHUD();shout('ONE MORE STRIKE — THE VICTORY IS NEAR!',130);
+ });
+}
+function finalStrike(){makeQuestion('apollyonVictory','THE FINAL VICTORY','Christian, sword in hand, gives Apollyon another mighty thrust. What does he proclaim?',[
+ ['“In all these things we are more than conquerors through Him that loved us.” (Romans 8:37)',true],
+ ['I am victorious because I am stronger than every other man.',false,'The victory is through Christ’s love, not independent human greatness.'],
+ ['The enemy has no power, and so we never need to resist him.',false,'Christian has endured a fearful and costly battle.']],
+ 'Apollyon spreads his dragon wings and flies away! Christian stands, wounded but delivered.',()=>{
+ s.battlePhase='victory';s.bossHp=0;flames=[];save();updateHUD();tone(880,.28,.07);
+ show('APOLLYON IS DEFEATED','Christian has resisted the Destroyer. His faith is not grounded in his own perfect conduct, but in his faithful Prince. Apollyon flees from the valley. Go EAST to receive healing and give thanks.');
+ });}
+function valleyHeal(){if(!flag('apollyonVictory'))return show('THE TREE OF LIFE','There is healing on the far side of the battle.');
+ if(!flag('valleyHealing'))learn('valleyHealing');s.hp=9;save();updateHUD();
+ show('HEALING LEAVES','A hand brings leaves from the tree of life. Christian applies them to the wounds received in battle, and they heal. He eats bread and drinks to refresh his strength.');}
+function valleyPraise(){if(!flag('valleyHealing'))return show('THANKSGIVING','First receive healing and refreshment from the leaves.');
+ if(!flag('valleyThanks'))learn('valleyThanks');show('THANKS TO THE LORD','Christian gives thanks to Him who delivered him from the mouth of the lion. With his sword drawn, he looks onward toward the Valley of the Shadow of Death.');}
+
+function near(a,b,dist=1){return Math.abs(a.x-b.x)+Math.abs(a.y-b.y)<=dist}
+function action(){if(menu){closeMenu();return;}if(dialog){cont();return;}let p={x:s.x,y:s.y};let targets=[...actors(),...objects()].filter(n=>near(n,p,2)).sort((a,b)=>(Math.abs(a.x-p.x)+Math.abs(a.y-p.y))-(Math.abs(b.x-p.x)+Math.abs(b.y-p.y)));if(targets.length){targets[0].dialogue?targets[0].dialogue():targets[0].fn();return;}if(s.map===3&&s.gateZone===1&&s.x>=18&&Math.abs(s.y-7)<=2){gateKnock();return;}if(isArena()&&!flag('apollyon_3')){startApollyon();return;}if(isArena()&&s.battlePhase==='combat'){swordAttack();return;}if(isArena()&&s.battlePhase==='finale'){finalStrike();return;}show('THE ROAD','There is nothing here to examine. Seek the marked characters and places; speak to them with Space or A.');}
+function endMap(){
+ if(s.map===8){
+  if(!canExit())return show('THE VALLEY OF HUMILIATION','The way is not yet open. '+objectives());
+  s.finished=true;s.unlocked=Math.max(8,s.unlocked);save();updateHUD();
+  show('CONGRATULATIONS — CHAPTER ONE COMPLETE','You have made real progress on the pilgrimage. Christian has endured the City of Destruction, the Slough, Mount Sinai, the Wicket Gate, the Interpreter’s House, the Cross, Hill Difficulty, Palace Beautiful, and at last the great battle with Apollyon. He took up the sword again and prevailed through Him who loved him.\n\nYou may now enter the next phase of the pilgrimage, which we will build next.\n\nNEXT PHASE: The Valley of the Shadow of Death.');return;
+ }
+ if(!canExit())return show('THE WAY FORWARD','The way is not yet open. '+objectives());
+ if(s.map===6&&!flag('hillComplete'))learn('hillComplete');
+ if(s.map===7){s.flags.palaceComplete=true;}
+ s.map++;s.unlocked=Math.max(s.map,s.unlocked);s.cityZone=0;s.gateZone=0;s.interpreterZone=0;s.hillZone=0;s.palaceZone=0;s.valleyZone=0;s.battlePhase='ready';s.hp=9;s.bossHp=12;s.finished=false;s.x=1;s.y=7;s.face='right';save();updateHUD();tone(780,.15);
+ show(names[s.map],descriptions[s.map]);
+}
+function canExit(){switch(s.map){case 0:return cityFinished();case 1:return flag('sloughCrossed');case 2:return flag('corrected')&&s.moralityZone===0;case 3:return s.gateZone===2&&flag('gateTalk_5');case 4:return flag('interpreter');case 5:return flag('cross')&&['angel1','angel2','angel3','simpleWarn','slothWarn','presumptionWarn'].every(flag);case 6:return flag('hillRecovered')&&flag('hillReturn')&&hillWarningsDone()&&flag('hillRepent');case 7:return flag('palaceArmor');case 8:return flag('apollyonVictory')&&flag('valleyHealing')&&flag('valleyThanks');}}
+function cityTravel(dir){
+ if(dir>0){
+   if(s.cityZone===2&&!flag('evangelist_2'))return show('EVANGELIST IN THE FIELDS','Seek Evangelist in the open fields first. He will show Christian where to flee.');
+   if(s.cityZone<3){s.cityZone++;s.x=1;s.y=7;s.face='right';tone(720,.08);save();updateHUD();
+     const lines=['','The market still offers worldly comfort. Christian must go out into the fields to find an answer.','Christian walks alone among the fields with his Book and heavy burden. A man named Evangelist approaches.','“Stop, stop!” Obstinate and Pliable have pursued Christian from the city. Obstinate argues against the pilgrimage; Pliable begins to listen.'];
+     show(cityZones[s.cityZone],lines[s.cityZone]);
+   }else endMap();
+ }else if(s.cityZone>0){s.cityZone--;s.x=22;s.y=7;s.face='left';tone(450,.07);save();updateHUD();show(cityZones[s.cityZone],'You return west along the road Christian has traveled.');}
+}
+
+function moralityTravel(direction){
+ if(direction>0){
+  if(s.moralityZone===0&&!flag('worldly_3'))return show('THE NORTHERN FORK','First speak with Worldly Wiseman. His counsel tempts Christian from the path.');
+  if(s.moralityZone===1&&!['moralityRent','moralityLegality','moralityCivility'].every(flag))return show('THE ROAD TO MORALITY','Examine all three promises of this village — easy living, Legality, and Civility — before approaching Mount Sinai.');
+  if(s.moralityZone>=2)return;
+  s.moralityZone++;s.x=12;s.y=12;s.face='up';save();updateHUD();tone(610,.10);
+  show(moralityZones[s.moralityZone],s.moralityZone===1?'The northern road appears comfortable. Fine houses and easy provisions line the way. Read the three waymarks to learn precisely what Worldly Wiseman promised.':'The high mountain looms above the road. Its face overhangs the path. Draw nearer, and see how the burden weighs upon Christian.');
+ }else{
+  if(s.moralityZone<=0)return;
+  s.moralityZone--;s.x=12;s.y=1;s.face='down';save();updateHUD();tone(450,.10);
+  show(moralityZones[s.moralityZone],s.moralityZone===0?(flag('corrected')?'Christian finds the original road again. Evangelist told him to return to the Wicket Gate. Continue EAST.':'Christian is again at the crossroads, where Wiseman sent him astray.'):'Christian comes back down from Mount Sinai. He has not reached Legality’s house. Continue SOUTH to the crossroads.');
+ }
+}
+function gateTravel(){
+ if(s.gateZone!==0)return;
+ s.gateZone=1;s.x=1;s.y=7;s.face='right';save();updateHUD();tone(725,.12);
+ show('BEFORE THE WICKET GATE','At the far end of the castle road stands a very small gate. Above it is an inscription. Beelzebub’s archers fire from the castle close by. Find the inscription and knock more than once.');
+}
+function interpreterTravel(dir){
+ if(dir>0){if(s.interpreterZone<2){s.interpreterZone++;s.x=1;s.y=7;s.face='right';tone(710,.10);save();updateHUD();show(interpreterZones[s.interpreterZone],s.interpreterZone===1?'The next gallery opens more lessons before Christian: the fire against the wall, Passion and Patience, and the valiant man entering the palace.':'The eastern chamber contains the iron cage, the awakened dreamer, and the final counsel of the Interpreter.');}else endMap();}
+ else {if(s.interpreterZone>0){s.interpreterZone--;s.x=22;s.y=7;s.face='left';tone(450,.08);save();updateHUD();show(interpreterZones[s.interpreterZone],'Christian returns to the previous gallery of the Interpreter’s House.');}}
+}
+function hillTravel(direction){
+ if(direction>0){
+  if(s.hillZone===0&&!hillDebateDone())return show('THE TWO STRANGERS','First confront Formalist and Hypocrisy about the gate, the old custom, and Christian’s freely given garment and roll.');
+  if(s.hillZone===1&&!flag('hillFork'))return show('THREE ROADS','First drink from the spring and choose the appointed path.');
+  if(s.hillZone===2&&!flag('hillSleep'))return show('THE ARBOR','The trail passes the arbor. Christian must rest there before reaching the summit.');
+  if(s.hillZone>=3)return;
+  s.hillZone++;s.face=s.hillZone>=2?'up':'right';s.x=s.hillZone===1?1:12;s.y=s.hillZone===1?7:12;s.steps++;save();updateHUD();tone(685,.12);
+  if(s.hillZone===1)show('THE THREE ROADS','A spring bubbles at the foot of the hill. Beyond it are three roads: Danger on the left, Destruction on the right, and the steep way named Difficulty in the middle.');
+  else if(s.hillZone===2)show('THE DIFFICULT ASCENT','Christian slows from running to walking, then clambers upon hands and knees. The rocky way zigzags upward, and midway stands an arbor built for refreshment.');
+  else if(flag('hillRecovered')&&!flag('hillReturn')){learn('hillReturn');show('THE HILLTOP AT DUSK','Christian climbs the hill a second time with his recovered roll. The sun is setting and the lions Timorous and Mistrust described trouble his thoughts. A stately palace can be seen ahead.');}
+  else show('THE HILLTOP','Two men, Timorous and Mistrust, come running down from the hilltop. They look terrified and warn of lions ahead.');
+ }else{
+  if(s.hillZone===3){s.hillZone=2;s.x=12;s.y=1;s.face='down';save();updateHUD();tone(340,.10);show('RETURN DOWN THE HILL',flag('hillMissing')?'Christian descends sorrowfully, searching carefully for the roll lost during his sleep. The arbor lies on the winding slope.':'Christian returns to the arbor below.');}
+  else if(s.hillZone===2){s.hillZone=1;s.x=12;s.y=1;s.face='down';save();updateHUD();show('THE THREE ROADS','Christian returns to the hill’s foot. The narrow way still ascends the center.');}
+  else if(s.hillZone===1){s.hillZone=0;s.x=22;s.y=7;s.face='left';save();updateHUD();show('THE TWO STRANGERS','Christian returns to the wall where he met Formalist and Hypocrisy.');}
+ }
+}
+function palaceTravel(direction){
+ if(direction>0){
+  if(s.palaceZone===0){if(!flag('watchfulLion'))return show('THE CHAINED LIONS','Speak with Watchful first. He will tell Christian how to pass the lions safely.');if(!flag('lionsPassed'))show('BETWEEN THE LIONS','Keeping to the middle of the path, Christian passes safely between the chained lions.');s.flags.lionsPassed=true;}
+  if(s.palaceZone===1&&!flag('watchful1'))return show('WATCHFUL THE PORTER','Watchful must first hear of Christian’s pilgrimage and judge him a true pilgrim.');
+  if(s.palaceZone===2&&!palaceLadiesDone())return show('THE DAMSELS OF THE HOUSE','First answer the questions of Discretion, Piety, Prudence, and Charity.');
+  if(s.palaceZone>=3)return endMap();
+  s.palaceZone++;s.x=1;s.y=7;s.face='right';save();updateHUD();tone(700,.11);
+  if(s.palaceZone===1)show('WATCHFUL THE PORTER','Christian is received inside the gate. Watchful the porter asks him concerning his pilgrimage before leading him farther in.');
+  else if(s.palaceZone===2)show('THE DAMSELS OF THE HOUSE','Discretion, Piety, Prudence, and Charity welcome Christian. They ask him of his journey and of the grace shown him.');
+  else show('THE TREASURY & ARMORY','The household shows Christian treasures and records of the King’s mighty deeds. Before he departs, they will arm him for the valley below.');
+ }else{
+  if(s.palaceZone>0){s.palaceZone--;s.x=22;s.y=7;s.face='left';save();updateHUD();show(palaceZones[s.palaceZone],'Christian returns to the previous part of Palace Beautiful.');}
+ }
+}
+function valleyTravel(dir){
+ if(dir>0){
+  if(s.valleyZone===0&&!flag('valleyDescent'))return show('THE DESCENT','First hear Watchful’s counsel and remember the whole armor of God.');
+  if(s.valleyZone===1&&!flag('apollyonVictory'))return show('APOLLYON BLOCKS THE WAY','The Destroyer still stands between Christian and the road to life. Do not turn your back.');
+  if(s.valleyZone>=2)return endMap();
+  s.valleyZone++;s.x=1;s.y=7;s.face='right';save();updateHUD();tone(600,.17,.04);
+  if(s.valleyZone===1)show('THE DESTROYER APPEARS','A foul fiend approaches across the field: scales like a fish, dragon wings, bear’s feet, fire and smoke, and the mouth of a lion. This is Apollyon.\n\nGo forward and answer his accusations.');
+  else show('THE VALLEY AFTER BATTLE','Apollyon has flown away. A quiet path winds onward. There are healing leaves, bread, and a place where Christian may give thanks.');
+ }else if(s.valleyZone>0){
+  if(s.valleyZone===1&&flag('apollyon_3')&&!flag('apollyonVictory'))return show('NO ARMOR FOR THE BACK','Christian will stand his ground. His armor is not made for retreat.');
+  s.valleyZone--;s.x=22;s.y=7;s.face='left';save();updateHUD();
+  show(valleyZones[s.valleyZone],'You return along the path.');
+ }
+}
+
+let arrowInvuln=0;
+function gateArrows(){if(s.map!==3||s.gateZone>1||flag('gateEntry'))return [];
+ const places=s.gateZone===0?[15,19,22]:[12,15,18];
+ return places.map((x,i)=>({x,y:3+((frame+i*41)%138)/13})).filter(a=>a.y<13);
+}
+function gateHit(){
+ if(s.map!==3||s.gateZone>1||dialog||menu||frame<arrowInvuln)return;
+ for(const a of gateArrows()){
+  if(s.x===a.x && Math.abs(s.y-a.y)<0.37 && s.y>=5){
+   arrowInvuln=frame+86;s.errors++;s.x=s.gateZone===0?11:7;s.y=7;
+   flash=13;tone(140,.2);save();updateHUD();
+   show('ARROWS FROM BEELZEBUB','A shaft whistles down from the strong castle! Christian narrowly escapes and falls back to safety. The arrows cannot destroy him here, but he must approach the gate with care.');return;
+  }
+ }
+}
+function walk(dx,dy){if(dialog||menu)return;let nx=s.x+dx,ny=s.y+dy;s.face=dx>0?'right':dx<0?'left':dy<0?'up':'down';
+ if(s.map===6){
+  if(s.hillZone===0){if(nx>=W){if(s.y===7)hillTravel(1);return;}if(nx<0)return;}
+  else if(s.hillZone===1){
+    if(ny<0){if(s.x>=10&&s.x<=13)hillTravel(1);return;}
+    if(nx<0){if(s.y===7)hillTravel(-1);return;}
+    if(nx>=W)return;
+    if(ny>=H)return;
+    if((nx<=5||nx>=19)&&ny<=5){s.errors++;save();tone(180,.12);show(nx<=5?'ROAD OF DANGER':'ROAD OF DESTRUCTION',nx<=5?'The trees swallow the way. One of the strangers took this left path. Christian returns to the spring rather than abandon the appointed way.':'Dark mountains fill the road. The other stranger has gone toward Destruction. Christian recoils and returns to the fork.');s.x=12;s.y=8;updateHUD();return;}
+  }
+  else if(s.hillZone===2){if(ny<0){if(s.x===12)hillTravel(1);return;}if(ny>=H){if(s.x===12)hillTravel(-1);return;}if(nx<0||nx>=W)return;}
+  else if(s.hillZone===3){if(ny>=H){if(s.x>=11&&s.x<=13)hillTravel(-1);return;}if(nx>=W){if(s.y===7)endMap();return;}if(nx<0||ny<0)return;}
+ }
+ if(s.map===1&&flag('sloughFarBank')&&!flag('help'))return show('CHRISTIAN CALLS FOR HELP','Christian has reached the far side, but cannot climb out. Press A / Space to ask Help for his hand.');
+ if(s.map===2){
+   if(nx>=W){if(s.y===7){if(s.moralityZone===0){if(flag('corrected'))endMap();else show('NOT YET','Christian has been drawn toward the tempting path. Examine Worldly Wiseman’s counsel and travel NORTH toward Morality to discover its danger.');}else show('THE FAR ROAD','Christian has left the appointed way. Return SOUTH until you regain the crossroads.');}return;}
+   if(nx<0)return;
+   if(ny<0){if(s.x>=10&&s.x<=13)moralityTravel(1);return;}
+   if(ny>=H){if(s.x>=10&&s.x<=13)moralityTravel(-1);return;}
+ }
+
+ if(s.map===3){
+   if(nx>=W){if(s.y===7){if(s.gateZone===0)gateTravel();else if(s.gateZone===2)endMap();}return;}
+   if(nx<0)return;
+   if(s.gateZone===1&&nx===21&&ny===7){gateKnock();return;}
+   if(s.gateZone===2&&nx===23&&ny===7&&!flag('gateTalk_5'))return show('THE STRAIGHT WAY','Before you leave, learn the right way from Good-will.');
+ }
+ if(s.map===4){
+   if(nx>=W){if(s.y===7){if(s.interpreterZone<2){interpreterTravel(1);return;}else {endMap();return;}}return;}
+   if(nx<0){if(s.y===7&&s.interpreterZone>0){interpreterTravel(-1);return;}return;}
+ }
+ if(s.map===7){
+   if(nx>=W){if(s.y===7||s.y===8){palaceTravel(1);return;}return;}
+   if(nx<0){if((s.y===7||s.y===8)&&s.palaceZone>0){palaceTravel(-1);return;}return;}
+ }
+ if(s.map===8){
+   if(nx>=W){if(s.y===7||s.y===8){valleyTravel(1);return;}return;}
+   if(nx<0){if(s.y===7||s.y===8){valleyTravel(-1);return;}return;}
+   if(s.valleyZone===1&&s.battlePhase==='fallen'&&nx>=12)return show('THE SWORD IS LOST','Seek the sword that fell nearer the middle of the field.');
+   if(s.valleyZone===1&&s.battlePhase==='combat'&&nx>=15&&ny>=4&&ny<=10)return;
+   if(s.valleyZone===1&&s.battlePhase==='finale'&&nx>=15&&ny>=4&&ny<=10)return;
+ }
+ if(s.map===0&&ny===7){if(nx>=W){cityTravel(1);return;}if(nx<0){cityTravel(-1);return;}}
+ if(nx>=W){if(s.y===7)endMap();else tone(200,.04);return;}
+ if(ny<0||ny>=H||nx<0)return;
+ if(s.map===2&&s.moralityZone===2&&nx>=14&&ny>=3&&ny<=11){s.x=12;s.y=11;s.errors++;flash=15;tone(145,.19);show('FIRE FROM SINAI','Flame flashes through a split in the cliff! Christian recoils; the mountain bars the way to Mr. Legality. The law cannot remove his burden.');save();updateHUD();return;}
+ if(blocked(nx,ny)){tone(150,.025);return;}s.x=nx;s.y=ny;s.steps++;
+ if(s.map===8&&s.valleyZone===1&&!flag('apollyon_3')&&s.x>=7)startApollyon();
+ if(s.map===1){
+  const t=tile(nx,ny);
+  if(!flag('sloughSunk')&&nx>=6&&nx<=10){
+    learn('sloughSunk');s.x=8;s.y=7;
+    show('SLOUGH OF DESPOND','Christian and Pliable both sink into the bog! Pliable is angered by this first difficulty and struggles back toward his city. Christian, weighed down by his burden, presses on toward the side nearest the Wicket Gate.');
+  }else if(flag('sloughSunk')&&!flag('sloughFarBank')&&nx>=5&&nx<=18&&t!=='s'){
+    s.x=8;s.y=7;s.errors++;show('A MISSED STEP','Christian slips off the causeway into the mire. His fears and doubts press upon him, but he struggles back to the pale stones. Bunyan says he missed the steps at first because fear drove him.');
+  }else if(flag('sloughSunk')&&!flag('sloughFarBank')&&nx>=17&&ny===7){
+    s.x=18;s.y=7;learn('sloughFarBank');
+    show('THE FAR SIDE OF THE SLOUGH','Christian has fought his way to the side nearest the Wicket Gate, but his heavy burden prevents him from climbing out. A man named Help stands on sound ground nearby. Call to him with A or Space.');
+  }
+ }
+
+ if(s.map===2&&s.moralityZone===2){
+  if(!flag('sinai')&&ny<=8&&nx>=10&&nx<=13){
+    learn('sinai');flash=30;tone(120,.28);show('MOUNT SINAI: FIRE AND FEAR','The cliff hangs over Christian as though it might fall upon him. Fire flashes from the hill, and his burden seems heavier than before. He trembles and regrets Worldly Wiseman’s counsel. Evangelist approaches and sternly asks, “What dost thou here, Christian?”');
+  }else if(flag('sinai')&&nx>=14&&ny<=10&&ny>=4){s.x=12;s.y=10;s.errors++;flash=13;tone(155,.15);show('THE THREATENING CLIFF','Flames and falling stone bar the way. The house of Mr. Legality is not reached. Seek Evangelist’s counsel instead.');}
+}
+
+ if(s.map===5&&!flag('cross')&&(Math.abs(s.x-10)+Math.abs(s.y-6)<=2))fallAtCross();
+ if(s.x===23&&s.y===7){if(s.map===0)cityTravel(1);else if(s.map===3){if(s.gateZone===0)gateTravel();else if(s.gateZone===2)endMap();}else endMap();}
+ if(s.steps%2===0)tone(265,.015,.012);save();updateHUD();}
+
+function pixelRect(x,y,w,h,col){g.fillStyle=col;g.fillRect(x,y,w,h)}
+function tiledraw(c,x,y,map){let X=x*T,Y0=Y+y*T,seed=(x*37+y*77+map*41)%23;let base={g:C.grass,r:C.path,m:C.mud,s:C.stone,t:'#337a57',h:'#9b584f',d:C.path,c:'#5c4860',k:'#73727a',w:'#615d63',f:C.floor,q:'#a89373',G:'#b99a69',X:C.grass,l:'#6c9960',b:'#4c5466',E:C.floor,v:'#a29b88',p:'#438d54',n:'#987453',u:'#aa8a5d',F:'#74717b',o:'#6d8793',L:'#a49a7d'}[c]||C.grass;pixelRect(X,Y0,T,T,base);
+if(c==='g'||c==='l'){pixelRect(X+4+seed%10,Y0+5+seed%8,3,3,c==='l'?'#87ae65':'#6ca361');pixelRect(X+21,Y0+16+seed%7,4,2,'#3c7949');if(seed===7)pixelRect(X+14,Y0+12,3,3,'#f7dc94');}
+if(c==='r'||c==='d'){pixelRect(X,Y0+((seed%3)*8),T,2,C.path2);pixelRect(X+10,Y0+5,3,3,'#dec594');pixelRect(X+22,Y0+19,3,2,'#e4c996');}
+if(c==='m'){pixelRect(X+2,Y0+4,19,5,'#6b5e45');pixelRect(X+11,Y0+20,18,5,'#494b37');pixelRect(X+21,Y0+11,5,4,'#927954');}
+if(c==='s'){pixelRect(X+3,Y0+4,26,24,'#a2a58f');pixelRect(X+5,Y0+4,21,4,'#d3d1b6');pixelRect(X+8,Y0+24,20,3,'#777d73');}
+if(c==='t'){pixelRect(X+12,Y0+18,8,13,'#614b3c');pixelRect(X+5,Y0+3,23,21,'#1d5741');pixelRect(X+8,Y0+2,18,7,'#397a50');pixelRect(X+4,Y0+13,12,7,'#276a43');pixelRect(X+21,Y0+10,7,8,'#418a55');}
+if(c==='h'){pixelRect(X,Y0+6,32,25,'#6f4650');pixelRect(X,Y0+4,32,9,'#bb6d59');pixelRect(X+2,Y0+1,28,5,'#d48063');pixelRect(X+6,Y0+18,8,7,'#d4b583');pixelRect(X+7,Y0+19,6,5,'#34495d');}
+if(c==='c'){pixelRect(X,Y0+5,32,27,'#433c58');pixelRect(X,Y0+1,32,8,'#79677e');pixelRect(X+12,Y0+13,8,14,'#232335');}
+if(c==='k'){pixelRect(X,Y0+8,32,24,'#575d6f');pixelRect(X+2,Y0+1,19,13,'#b0a49f');pixelRect(X+12,Y0+8,20,16,'#797d8c');pixelRect(X+18,Y0+23,14,7,'#464b5c');}
+if(c==='w'){pixelRect(X,Y0,32,32,'#4d4c59');pixelRect(X+2,Y0+2,28,28,'#737081');pixelRect(X+2,Y0+2,28,4,'#9393a3');pixelRect(X+3,Y0+28,26,3,'#3e414b');}
+if(c==='f'||c==='q'||c==='E'){pixelRect(X,Y0,32,1,'#bfad91');pixelRect(X+15,Y0+15,2,2,'#836f68');if(c==='q'){pixelRect(X+3,Y0+3,26,26,'#97816d');pixelRect(X+6,Y0+6,20,20,'#a7967d');}}
+if(c==='G'){pixelRect(X+5,Y0,23,32,'#d7b983');pixelRect(X+9,Y0+5,15,27,'#403f57');pixelRect(X+15,Y0+17,3,3,'#ffdf86');}
+if(c==='X'){pixelRect(X+13,Y0+2,7,27,'#a17c4b');pixelRect(X+6,Y0+9,20,6,'#bb9560');}
+if(c==='b'){pixelRect(X+4,Y0+8,27,20,'#545662');pixelRect(X+2,Y0+3,25,7,'#a3a0a0');}
+if(c==='v'){pixelRect(X,Y0,T,T,'#aaa491');pixelRect(X,Y0,32,2,'#d2c6aa');pixelRect(X+2,Y0+7,28,2,'#7d807b');pixelRect(X+12,Y0+8,2,8,'#898778');pixelRect(X+2,Y0+20,27,2,'#787d76');pixelRect(X+21,Y0+21,2,11,'#8b8877');pixelRect(X+1,Y0+31,32,1,'#e8d8b9');}
+if(c==='p'){pixelRect(X,Y0,T,T,'#347547');pixelRect(X+4,Y0+18,22,4,'#76b166');pixelRect(X+9,Y0+8,5,5,'#e6d079');pixelRect(X+20,Y0+21,5,5,'#edb29f');pixelRect(X+3,Y0+3,5,4,'#86a5bf');}
+if(c==='n'){pixelRect(X,Y0,T,T,'#886f61');pixelRect(X,Y0+2,32,8,'#bf8a5b');pixelRect(X,Y0+10,32,19,'#b2a180');pixelRect(X,Y0+30,32,2,'#756456');pixelRect(X+4,Y0+17,11,8,'#edce97');pixelRect(X+6,Y0+19,7,5,'#456279');pixelRect(X+19,Y0+16,9,10,'#dcc28e');pixelRect(X+20,Y0+19,6,4,'#4b6781');}
+if(c==='u'){pixelRect(X,Y0+13,32,17,'#9d774f');pixelRect(X+2,Y0+18,27,12,'#543f42');pixelRect(X,Y0+4,32,12,'#e1b778');for(let b=0;b<4;b++)pixelRect(X+b*8,Y0+3,5,14,b%2?'#b85b55':'#f0e4bf');pixelRect(X+6,Y0+20,20,5,'#e9cd83');}
+if(c==='F'){pixelRect(X,Y0,32,32,'#505a67');pixelRect(X,Y0+4,32,23,'#7d7e79');pixelRect(X,Y0+5,32,3,'#a5a294');pixelRect(X,Y0+27,32,3,'#55545b');pixelRect(X+5,Y0+11,3,14,'#a8a8a0');pixelRect(X+26,Y0+11,3,14,'#55545b');}
+if(c==='o'){pixelRect(X,Y0+3,32,29,'#b5a78c');pixelRect(X+3,Y0+6,26,23,'#5e93a1');pixelRect(X+8,Y0+9,16,15,'#7ac1c8');pixelRect(X+10,Y0+12,9,3,'#d3e6d4');}
+if(c==='L'){pixelRect(X+14,Y0+12,4,20,'#434552');pixelRect(X+9,Y0+3,14,13,'#ebc66e');pixelRect(X+12,Y0+6,8,7,'#fff0a0');pixelRect(X+9,Y0+1,14,3,'#353e4d');pixelRect(X+7,Y0+29,19,3,'#5a5160');}
+
+}
+function text(txt,x,y,size=12,color='#f8e9c6',align='left'){g.font=`bold ${size}px monospace`;g.fillStyle='#162232';g.textAlign=align;g.fillText(txt,x+1,y+1);g.fillStyle=color;g.fillText(txt,x,y);g.textAlign='left';}
+function sprite(x,y,color,kind='person',face='down',burden=false){
+ const X=x*T,Y0=Y+y*T, stride=(kind==='hero'&&s.steps%2===1);
+ if(kind==='angel'){pixelRect(X+3,Y0+6,26,16,'#e4d694');pixelRect(X+9,Y0+11,14,17,'#fff4bc');pixelRect(X+11,Y0+5,10,9,'#ffe0a4');pixelRect(X+8,Y0+3,17,3,'#f9f1bc');pixelRect(X+5,Y0+24,21,3,'#c2a15a');return;}
+ if(kind==='lion'){pixelRect(X+4,Y0+20,24,8,'#7b6043');pixelRect(X+9,Y0+11,13,13,'#a6814f');pixelRect(X+17,Y0+8,10,10,'#8d6c47');pixelRect(X+22,Y0+21,8,3,'#7b6043');pixelRect(X+3,Y0+23,5,6,'#5f4834');pixelRect(X+22,Y0+23,5,6,'#5f4834');return;}
+ if(kind==='sleeper'){pixelRect(X+3,Y0+20,25,8,'#5f5162');pixelRect(X+6,Y0+17,21,7,'#a0a9b6');pixelRect(X+18,Y0+13,10,8,'#e0b28a');pixelRect(X+4,Y0+28,7,3,'#dfc6a1');pixelRect(X+20,Y0+28,6,3,'#dfc6a1');return;}
+ // A readable 8-bit silhouette: boots, tunic, headwear, faces and distinctive roles
+ pixelRect(X+6,Y0+29,7,3,'#293246');pixelRect(X+19,Y0+29,7,3,'#293246');
+ pixelRect(X+(stride?7:9),Y0+23,7,7,'#334466');pixelRect(X+(stride?19:17),Y0+23,7,7,'#334466');
+ if(kind==='hero'&&burden){let heavier=s.map===2&&s.moralityZone===2&&flag('sinai');
+ pixelRect(X+(heavier?-4:1),Y0+(heavier?6:9),heavier?19:14,heavier?22:18,'#543f39');
+ pixelRect(X+(heavier?-2:2),Y0+(heavier?4:7),heavier?17:12,5,'#aa7c4e');
+ pixelRect(X+(heavier?-1:3),Y0+12,heavier?13:9,10,'#936b44');
+ pixelRect(X+4,Y0+15,7,3,'#b08b56');}
+ pixelRect(X+5,Y0+14,22,13,kind==='hero'?'#3678aa':color);
+ pixelRect(X+2,Y0+17,5,9,'#e5ae84');pixelRect(X+26,Y0+17,5,9,'#e5ae84');
+ pixelRect(X+7,Y0+24,19,3,kind==='hero'?'#e5c375':'#6b5450');
+ pixelRect(X+9,Y0+5,15,12,'#eac08e');
+ if(kind==='child'){pixelRect(X+9,Y0+9,15,9,'#efbb91');pixelRect(X+8,Y0+13,16,10,color);pixelRect(X+9,Y0+4,15,6,'#6f5148');}
+ else if(kind==='woman'){pixelRect(X+7,Y0+3,19,8,'#54363d');pixelRect(X+7,Y0+12,19,8,'#c48b79');pixelRect(X+5,Y0+22,22,7,color);}
+ else if(kind==='evangelist'){pixelRect(X+6,Y0+2,20,6,'#d1b279');pixelRect(X+9,Y0+8,15,8,'#e3c9a1');pixelRect(X+10,Y0+20,13,7,'#ffe9b3');pixelRect(X+9,Y0+24,16,3,'#e4e3cf');}
+ else if(kind==='merchant'){pixelRect(X+7,Y0+2,19,6,'#5d353a');pixelRect(X+4,Y0+20,23,5,'#e2bb6d');pixelRect(X+12,Y0+21,8,4,'#fff0a9');}
+ else if(kind==='guard'){pixelRect(X+7,Y0+1,19,9,'#788ba2');pixelRect(X+4,Y0+18,6,6,'#a9bec9');pixelRect(X+21,Y0+18,7,6,'#a9bec9');}
+ else if(kind==='scholar'){pixelRect(X+8,Y0+1,19,8,'#704558');pixelRect(X+13,Y0+20,9,4,'#f0b9b4');}
+ else if(kind==='neighbor'){pixelRect(X+8,Y0+3,17,7,'#a2b0b8');pixelRect(X+13,Y0+10,11,3,'#ecdad3');}
+ else if(kind==='hero'){pixelRect(X+8,Y0+3,17,6,'#654b36');pixelRect(X+10,Y0+17,3,9,'#f6d595');}
+ else pixelRect(X+8,Y0+3,17,6,'#585060');
+ if(face==='up'){pixelRect(X+10,Y0+10,13,3,'#755642');}
+ else if(face==='left'){pixelRect(X+10,Y0+12,3,3,'#383643');}
+ else if(face==='right'){pixelRect(X+21,Y0+12,3,3,'#383643');}
+ else {pixelRect(X+12,Y0+12,3,2,'#423b40');pixelRect(X+20,Y0+12,3,2,'#423b40');}
+}
+function drawWorld(){let q=s.map===0?cityGrids[s.cityZone]:s.map===2?moralityGrids[s.moralityZone]:s.map===3?gateGrids[s.gateZone]:s.map===4?interpreterGrids[s.interpreterZone]:s.map===6?hillGrids[s.hillZone]:s.map===7?palaceGrids[s.palaceZone]:s.map===8?valleyGrids[s.valleyZone]:grids[s.map];for(let y=0;y<H;y++)for(let x=0;x<W;x++)tiledraw(q[y][x],x,y,s.map); if(s.map===0){
+ const titles=cityZones;
+ text(titles[s.cityZone],12*T,Y+2*T-12,15,'#ffe4a1','center');
+ if(s.cityZone===0){text('CHRISTIAN’S HOME',5*T,Y+2*T-9,10,'#ffedbd','center');text('FAMILY',5*T,Y+10*T-8,10,'#fff1be');}
+ if(s.cityZone===1){text('BOOKS / PROVISIONS',15*T,Y+2*T-9,10,'#ffe4a9');text('FOUNTAIN',11*T,Y+1*T+15,10,'#faf0ba');}
+ if(s.cityZone===2){text('THE CITY BEHIND',2*T,Y+2*T+14,10,'#ffe4a9');text('A SHINING LIGHT →',16*T,Y+9*T+13,12,'#ffe2a5');}
+ if(s.cityZone===3){text('OBSTINATE & PLIABLE',12*T,Y+3*T+4,12,'#ffedbd','center');text('SLOUGH OF DESPOND →',14*T,Y+10*T+13,11,'#ffe2a5');}
+ text(s.cityZone>0?'← WEST':'',2*T,Y+8*T+25,12,'#fff0b6');text(s.cityZone<3?'EAST →':'EXIT →',19*T,Y+8*T+25,12,'#fff0b6');
+ }if(s.map===1){text('SLOUGH OF DESPOND',12*T,64+1*T-9,12,'#f5dbb8','center');text('DEEP MIRE',8*T,64+3*T+2,11,'#e8d4b0');text(flag('help')?'SOUND GROUND →':'FAR SIDE →',15*T,64+10*T+14,11,'#f1e3ae');}if(s.map===2){
+  text(moralityZones[s.moralityZone],12*T,Y+1*T+10,15,'#fff0c1','center');
+  if(s.moralityZone===0){
+    text('← CITY / SLOUGH',1*T,Y+8*T+19,10,'#e9dfb4');text('WICKET GATE →',18*T,Y+8*T+19,11,'#fff0b6');text('MORALITY ↑',12*T,Y+3*T+9,12,'#ffe1a0','center');
+  }else if(s.moralityZone===1){
+    text('GOOD HOUSES',2*T,Y+2*T-7,11,'#fff0bc');text('LEGALITY & CIVILITY',15*T,Y+2*T-7,10,'#ffefb7');
+    text('MOUNT SINAI ↑',12*T,Y+2*T+15,12,'#ffe3aa','center');text('CROSSROADS ↓',12*T,Y+12*T+18,11,'#fff0c0','center');
+  }else{
+    // A leaning face of stone, fissures, fire and flashing lightning from the mountain.
+    pixelRect(14*T,Y+2*T+7,13,11*T,'#282c3a');
+    for(let k=0;k<8;k++){let xx=16*T+(k%4)*48, yy=Y+34+Math.floor(k/4)*183;
+      pixelRect(xx,yy,23,6,'#b7aaa0');pixelRect(xx+19,yy+6,7,27,'#4c4652');
+    }
+    const beat=Math.floor(frame/13)%8;
+    for(let i=0;i<5;i++){let xx=16*T+((i*53+beat*17)%203),yy=Y+60+(i*59+beat*8)%265;
+      pixelRect(xx,yy,7,16,i%2?'#ff9758':'#ffe0a0');pixelRect(xx-4,yy+10,4,10,'#e56347');
+    }
+    if(beat===1||beat===5){g.fillStyle='rgba(255,226,154,.12)';g.fillRect(14*T,Y,10*T,14*T);}
+    text('OVERHANGING CLIFF',18*T,Y+2*T+8,11,'#ffcb85','center');
+    text('FLAMES',18*T,Y+11*T+16,12,'#ffc98b','center');
+    text('SOUTH ↓',11*T,Y+12*T+20,12,'#fff2c5','center');
+  }
+}if(s.map===3){
+  text(gateZones[s.gateZone],12*T,Y+1*T+8,15,'#ffe5ae','center');
+  if(s.gateZone<=1){
+    text('BEELZEBUB’S CASTLE',15*T,Y+2*T-12,11,'#e6b8a7');
+    // Animated archery from the battlements — flight paths are visible.
+    for(const a of gateArrows()){
+      const xx=a.x*T+14,yy=Y+a.y*T;
+      pixelRect(xx-2,yy-10,4,21,'#f2c47a');pixelRect(xx-6,yy+5,12,4,'#f5ead4');
+      pixelRect(xx-6,yy-9,3,7,'#ae5363');pixelRect(xx+3,yy-9,3,7,'#ae5363');
+    }
+    if(s.gateZone===0){text('WICKET GATE →',19*T,Y+9*T+14,11,'#ffefbe');}
+    else{
+      pixelRect(21*T+2,Y+6*T-10,29,2*T+24,'#8e7c75');
+      pixelRect(21*T+7,Y+7*T+2,21,31,flag('gateEntry')?'#efd5a6':'#493d4c');
+      pixelRect(21*T+22,Y+7*T+19,3,4,'#f6d584');
+      pixelRect(18*T-3,Y+5*T-21,155,19,'#b39a79');
+      text('KNOCK & ENTER',20*T,Y+5*T-8,12,'#392e36','center');
+      text('KNOCKS '+s.knocks+'/3',18*T,Y+11*T+14,12,'#ffe0a7');
+    }
+  }else{
+    text('THE STRAIGHT & NARROW WAY',12*T,Y+2*T+3,12,'#f7e5aa','center');
+    text('TO THE INTERPRETER →',17*T,Y+9*T+18,12,'#ffebaa');
+  }
+}if(s.map===4){text('THE INTERPRETER\'S HOUSE',12*T,Y+1*T-10,13,'#e8dbaa','center');text(interpreterZones[s.interpreterZone],12*T,Y+2*T+1,12,'#f7efc1','center');if(s.interpreterZone===0){text('PORTRAIT',5*T,Y+2*T+4,10,'#ffeab1','center');text('DUST',18*T,Y+2*T+4,10,'#ffeab1','center');text('INNER GALLERY →',17*T,Y+9*T+18,11,'#ffefba');}else if(s.interpreterZone===1){text('PASSION & PATIENCE',4*T,Y+2*T+4,10,'#ffeab1','center');text('FIRE',11*T,Y+8*T+18,10,'#ffeab1','center');text('VALIANT MAN',20*T,Y+2*T+4,10,'#ffeab1','center');text('← HALL',2*T,Y+9*T+18,11,'#ffefba');text('EASTERN CHAMBER →',17*T,Y+9*T+18,11,'#ffefba');}else{text('IRON CAGE',5*T,Y+2*T+4,10,'#ffeab1','center');text('AWAKENED MAN',18*T,Y+2*T+4,10,'#ffeab1','center');text(flag('interpreter')?'TO THE CROSS →':'INTERPRETER AHEAD',17*T,Y+9*T+18,11,'#ffefba');text('← INNER GALLERY',2*T,Y+9*T+18,11,'#ffefba');}}if(s.map===5){text('WALL OF SALVATION',3*T,Y+4*T-11,11,'#fce9af');text('THE PLACE OF DELIVERANCE',6*T,64+2*T+2,11,'#fce9af');pixelRect(10*T+11,Y+5*T-15,8,51,'#6c493b');pixelRect(10*T-3,Y+5*T-2,39,9,'#b28a61');pixelRect(12*T+7,Y+9*T+12,22,12,'#2b2c3b');}
+if(s.map===6){
+ text('HILL DIFFICULTY',12*T,Y+1*T+9,15,'#f8e7b0','center');
+ if(s.hillZone===0){
+  text('WALL OF SALVATION',7*T,Y+3*T-12,11,'#ffde9e');
+  text('THE WAY →',19*T,Y+9*T+20,12,'#fff0bb');
+  // Two wall climbers, entering in a way contrary to the gate.
+  pixelRect(9*T+7,Y+4*T+1,13,6,'#5d475d');pixelRect(9*T+7,Y+4*T-10,13,8,'#c89b81');
+ }else if(s.hillZone===1){
+  text('DANGER',5*T,Y+2*T+15,12,'#ffd293','center');
+  text('DESTRUCTION',20*T,Y+2*T+15,12,'#ffd293','center');
+  text('DIFFICULTY ↑',12*T,Y+2*T+15,13,'#ffecae','center');
+  text('THE SPRING',11*T,Y+11*T-2,12,'#d8edcf');
+  text('← FALSE WAYS →',12*T,Y+13*T-14,11,'#edc994','center');
+ }else if(s.hillZone===2){
+  // Mountaintop shale and layered cliff shadows.
+  for(let j=0;j<15;j++){let xx=((j*197+33)%W)*T,yy=Y+((j*83+7)%H)*T;if(hillGrids[2][Math.floor((yy-Y)/T)][Math.floor(xx/T)]==='k')pixelRect(xx+4,yy+9,16,3,'#6e778a');}
+  text('THE ARBOR',8*T,Y+5*T-12,12,'#ffe2b0','center');
+  text('SUMMIT ↑',19*T,Y+2*T+11,12,'#fff0b4','center');
+  text('WINDING CLIMB',3*T,Y+12*T+18,11,'#fff0b4');
+  if(flag('hillMissing')&&!flag('hillRecovered'))text('SEARCH THE ARBOR',14*T,Y+10*T+17,12,'#ffda91');
+  // Arbor canopy, slatted bench and hidden gap beneath it.
+  pixelRect(7*T+3,Y+5*T+6,70,7,'#ab9b65');pixelRect(7*T+8,Y+5*T-7,60,15,'#477e5a');
+  pixelRect(8*T-3,Y+6*T+20,42,5,'#b39a71');pixelRect(8*T+2,Y+6*T+25,4,6,'#55443e');pixelRect(8*T+32,Y+6*T+25,4,6,'#55443e');
+  if(flag('hillRecovered')){pixelRect(8*T+21,Y+6*T+17,10,6,'#f3da85');}
+ }else{
+  text(flag('hillReturn')?'DUSK FALLS':'TWO MEN RETURN',12*T,Y+2*T-4,12,'#fbe2ae','center');
+  text('PALACE BEAUTIFUL',20*T,Y+1*T+11,10,'#ffe7ab','center');
+  text('LIONS AHEAD →',19*T,Y+10*T+15,12,'#ffe7a5');
+  // Distant palace towers and lions (not active enemies until Map 8).
+  pixelRect(18*T+4,Y+1*T+5,12,24,'#d9b382');pixelRect(21*T+9,Y+1*T+5,12,24,'#d9b382');
+  for(let xx of [18,21]){let bx=xx*T+6,by=Y+7*T-8;pixelRect(bx,by,20,10,'#735c49');pixelRect(bx+12,by-6,9,9,'#9b784e');pixelRect(bx+2,by+8,4,8,'#705647');pixelRect(bx+14,by+8,4,8,'#705647');}
+  if(flag('hillReturn')){g.fillStyle='rgba(17,22,46,.26)';g.fillRect(0,Y,768,H*T);}
+ }
+}
+if(s.map===7){
+ text('PALACE BEAUTIFUL',12*T,Y+1*T+9,15,'#f8e7b0','center');
+ text(palaceZones[s.palaceZone],12*T,Y+2*T+3,12,'#fff1c5','center');
+ if(s.palaceZone===0){text('WATCHFUL',20*T,Y+2*T+14,11,'#ffe4a9');text('LIONS',16*T,Y+5*T-8,11,'#ffd59f','center');text(flag('watchfulLion')?'MIDDLE OF THE PATH →':'SPEAK WITH WATCHFUL',15*T,Y+10*T+16,11,'#fff0bb');}
+ else if(s.palaceZone===1){text('PORTER’S LODGE',12*T,Y+2*T+10,12,'#ffe4a9','center');text('TO THE HOUSE →',17*T,Y+10*T+16,11,'#fff0bb');text('← LIONS',2*T,Y+10*T+16,11,'#fff0bb');}
+ else if(s.palaceZone===2){text('DISCRETION',5*T,Y+2*T+16,10,'#ffe4a9','center');text('PIETY',17*T,Y+2*T+16,10,'#ffe4a9','center');text('PRUDENCE',5*T,Y+8*T+16,10,'#ffe4a9','center');text('CHARITY',17*T,Y+8*T+16,10,'#ffe4a9','center');text('← PORTER',2*T,Y+10*T+16,11,'#fff0bb');text('TREASURY →',18*T,Y+10*T+16,11,'#fff0bb');}
+ else {text('TREASURES',6*T,Y+2*T+16,11,'#ffe4a9','center');text('ARMORY',18*T,Y+2*T+16,11,'#ffe4a9','center');text(flag('palaceArmor')?'TO THE VALLEY →':'RECEIVE ARMOR',18*T,Y+10*T+16,11,'#fff0bb');text('← THE HOUSE',2*T,Y+10*T+16,11,'#fff0bb');}
+}
+
+if(s.map===8){
+ text('VALLEY OF HUMILIATION',12*T,Y+1*T+9,15,'#f8e7b0','center');
+ if(s.valleyZone===0){
+  text('THE DESCENT',12*T,Y+2*T+12,13,'#ffe4a7','center');
+  text('A STEEP AND LOWLY ROAD',9*T,Y+12*T+4,11,'#fff1c1');
+  for(let j=0;j<6;j++){let x=5*T+j*3*T,y=Y+3*T+(j%2)*T;pixelRect(x,y,20,5,'#c2a9a2');pixelRect(x+11,y+4,9,16,'#686979');}
+ }else if(s.valleyZone===1){
+  // Storm-lit 8-bit boss arena, drawn independently of background tiles.
+  g.fillStyle='rgba(35,25,53,.20)';g.fillRect(0,Y,768,448);
+  const bX=16*T,bY=Y+6*T+Math.sin(frame/35)*7;
+  if(s.battlePhase==='victory'||flag('apollyonVictory')){
+   text('THE DESTROYER HAS FLED!',12*T,Y+3*T+10,15,'#fff0ab','center');
+   for(let i=0;i<22;i++){let x=(i*103+frame*2)%768,y=Y+((i*61+frame)%410);pixelRect(x,y,4,4,i%2?'#ffe5a8':'#9ee0cb');}
+  }else{
+   // Wings, fish-like scales, lion mouth, bear feet, flame and smoke.
+   const rage=s.bossHp<=6&&s.battlePhase==='combat';
+   pixelRect(bX-47,bY-20,34,39,rage?'#9c4c67':'#64516e');pixelRect(bX+31,bY-20,34,39,rage?'#9c4c67':'#64516e');
+   for(let i=0;i<4;i++){pixelRect(bX-47+i*4,bY-30+i*3,12,12,'#4c435e');pixelRect(bX+53-i*4,bY-30+i*3,12,12,'#4c435e');}
+   pixelRect(bX-15,bY-25,51,64,rage?'#9d6458':'#637888');
+   for(let i=0;i<5;i++)for(let j=0;j<4;j++)pixelRect(bX-9+i*9,bY-19+j*13,5,4,(i+j)%2?'#a6aa9b':'#3d5263');
+   pixelRect(bX-5,bY-46,41,29,'#846348');pixelRect(bX+4,bY-37,8,6,'#f6cc76');pixelRect(bX+25,bY-37,7,6,'#f6cc76');
+   pixelRect(bX+16,bY-24,21,10,'#342e3e');pixelRect(bX+24,bY-20,8,4,'#e5cbb3');
+   pixelRect(bX-9,bY+32,13,17,'#594a43');pixelRect(bX+22,bY+32,13,17,'#594a43');
+   let f=Math.sin(frame/8)*4;pixelRect(bX+37,bY-11+f,14,11,'#e56d43');pixelRect(bX+48,bY-6+f,11,7,'#ffc16c');
+   pixelRect(bX+60,bY-32,5,6,'#6a6470');pixelRect(bX+70,bY-40,6,7,'#75737d');
+   text('APOLLYON',16*T,Y+3*T+8,15,'#f9c3a0','center');
+  }
+  if(s.battlePhase==='combat'||s.battlePhase==='fallen'||s.battlePhase==='finale'){
+   if(s.battlePhase==='combat')text(s.bossHp>6?'PHASE I · FLAMING DARTS':'PHASE II · DARTS AS HAIL',12*T,Y+3*T-10,11,'#ffe1af','center');
+   pixelRect(7*T,Y+1*T+19,10*T,18,'#252a40');pixelRect(7*T+3,Y+1*T+22,(10*T-6)*Math.max(0,s.bossHp)/12,12,s.bossHp>6?'#db6e5f':'#f4b462');
+   text('APOLLYON · '+s.bossHp+'/12',12*T,Y+1*T+32,11,'#fff2cf','center');
+   text('HEARTS '+('♥'.repeat(Math.max(0,s.hp))),1*T,Y+2*T+9,14,'#ffe0bd');
+  }
+  for(const f of flames){let xx=f.x*T,yy=Y+f.y*T;pixelRect(xx-6,yy-5,15,13,'#e96348');pixelRect(xx-3,yy-3,8,7,'#ffdf8a');pixelRect(xx+5,yy-2,5,5,'#f7aa50');}
+  if(shieldHeld&&s.battlePhase==='combat'){let px=s.x*T+16,py=Y+s.y*T+16;pixelRect(px+13,py-13,8,27,'#8ccbd6');pixelRect(px+12,py-9,11,18,'#d1eef0');}
+  if(s.battlePhase==='fallen')text('THE SWORD IS LOST — FIND THE GOLDEN SWORD!',12*T,Y+12*T-18,11,'#fff0b0','center');
+  if(s.battlePhase==='finale')text('FACE RIGHT AND STRIKE — X / SWORD',12*T,Y+12*T-18,12,'#fff0b0','center');
+  if(bossSignal&&frame<bossSignalUntil)text(bossSignal,12*T,Y+12*T+16,12,'#ffe5ac','center');
+ }else{
+  text('HEALING AND THANKSGIVING',12*T,Y+2*T+8,14,'#fff0b4','center');
+  text('THE SHADOW OF DEATH LIES AHEAD →',12*T,Y+12*T-10,11,'#e9e5c7','center');
+ }
+}
+
+for(let o of objects()){let xx=o.x*T+16,yy=Y+o.y*T+16;if(o.kind==='book'){pixelRect(xx-10,yy-10,20,17,'#e0b95f');pixelRect(xx-8,yy-8,16,14,'#fff1bf');pixelRect(xx,yy-8,2,14,'#8c554e');}else if(o.kind==='portrait'){pixelRect(xx-11,yy-14,22,28,'#6f5647');pixelRect(xx-8,yy-11,16,22,'#d5c59a');pixelRect(xx-2,yy-4,4,8,'#6a4b43');pixelRect(xx-5,yy+5,10,2,'#6a4b43');}else if(o.kind==='spring'){pixelRect(xx-12,yy-10,24,21,'#5c8a99');pixelRect(xx-8,yy-8,16,17,'#8dc9d3');pixelRect(xx-6,yy-3,11,5,'#e6f8e0');}else if(o.kind==='arbor'){pixelRect(xx-12,yy-13,24,9,'#2f6946');pixelRect(xx-9,yy-17,18,6,'#579363');pixelRect(xx-11,yy-4,4,17,'#765e42');pixelRect(xx+7,yy-4,4,17,'#765e42');pixelRect(xx-10,yy+6,20,6,'#b59d73');}else if(o.kind==='dust'){pixelRect(xx-11,yy-5,22,11,'#776a5f');for(let j=0;j<5;j++)pixelRect(xx-12+j*6,yy-10+j%3,3,3,'#ddd3bb');}else if(o.kind==='fire'){pixelRect(xx-7,yy-10,15,23,'#e6a147');pixelRect(xx-4,yy-4,9,15,'#ffd98b');}else if(o.kind==='patience'){pixelRect(xx-13,yy-4,10,14,'#ca6c63');pixelRect(xx+4,yy-4,10,14,'#7fa4ae');}else if(o.kind==='valiant'){pixelRect(xx-12,yy-6,24,18,'#495a7d');pixelRect(xx-3,yy-13,6,25,'#d1d7dc');pixelRect(xx+6,yy-10,11,11,'#ddb36e');}else if(o.kind==='cage'){pixelRect(xx-14,yy-13,28,27,'#3b4349');for(let j=0;j<4;j++)pixelRect(xx-11+j*7,yy-13,3,27,'#c5c5ad');}else if(o.kind==='dream'){pixelRect(xx-12,yy-10,24,16,'#6f88a6');pixelRect(xx-8,yy-6,16,10,'#d9e8ef');pixelRect(xx-3,yy+4,6,10,'#e6bc92');pixelRect(xx+10,yy-16,7,7,'#f6e3a1');}else if(o.kind==='treasure'){pixelRect(xx-12,yy-10,24,18,'#7a5f43');pixelRect(xx-10,yy-8,20,14,'#cda45e');pixelRect(xx-9,yy-7,18,12,'#f0d88f');pixelRect(xx-3,yy-2,6,4,'#8a5d35');}else if(o.kind==='armory'){pixelRect(xx-12,yy-12,24,24,'#4d5664');pixelRect(xx-2,yy-15,4,27,'#d4d6d8');pixelRect(xx+5,yy-10,10,10,'#dcb16f');pixelRect(xx-10,yy+4,20,4,'#9da7b6');}else if(o.kind==='fallenSword'){pixelRect(xx-3,yy-14,6,29,'#f3e1a1');pixelRect(xx-12,yy+1,24,5,'#f0bd6f');pixelRect(xx-3,yy+11,6,7,'#a76e4f');}else if(o.kind==='healing'){pixelRect(xx-13,yy-9,26,18,'#327458');pixelRect(xx-10,yy-13,9,14,'#86c77a');pixelRect(xx+4,yy-11,9,13,'#c7eaa4');}else if(o.kind==='door'){pixelRect(xx-13,yy-18,26,34,'#c1a077');pixelRect(xx-9,yy-14,18,30,'#403b52');pixelRect(xx+4,yy,3,3,'#f6d38d');}else if(o.kind==='sign'){pixelRect(xx-2,yy-1,4,14,'#574135');pixelRect(xx-12,yy-13,24,14,'#a0754f');pixelRect(xx-10,yy-11,20,10,'#e5bd79');pixelRect(xx-8,yy-8,15,2,'#664a3c');}}
+for(let a of actors()){sprite(a.x,a.y,a.color,a.kind);let d=Math.abs(a.x-s.x)+Math.abs(a.y-s.y);if(d<=2&&!dialog&&!menu){pixelRect(a.x*T+7,Y+a.y*T-11,18,10,'#f0d27b');text('!',a.x*T+16,Y+a.y*T-3,12,'#402e42','center');}}
+sprite(s.x,s.y,'#469aca','hero',s.face,!flag('cross'));
+if(s.map===1&&!flag('help')&&flag('sloughFarBank'))text('HELP!',s.x*T+18,Y+s.y*T-11,11,'#fff0c0','center');
+if(s.map===8&&s.finished){
+ pixelRect(4*T,Y+3*T,16*T,7*T,'#122339');
+ pixelRect(4*T+5,Y+3*T+5,16*T-10,7*T-10,'#2a415a');
+ text('CHAPTER ONE COMPLETE',12*T,Y+4*T+18,20,'#ffe09b','center');
+ text('MORE THAN CONQUERORS',12*T,Y+6*T+8,18,'#fff0ba','center');
+ text('THROUGH HIM WHO LOVED US',12*T,Y+7*T+16,12,'#e0ddcd','center');
+ text('ROMANS 8:37',12*T,Y+8*T+18,12,'#a8e4d7','center');
+}
+if(s.map===3&&s.gateZone===1&&!flag('gateEntry'))text('A: KNOCK',19*T,Y+10*T,12,'#ffe9a1');
+if(canExit()||s.map===5||s.map===0&&s.cityZone<2||s.map===3&&s.gateZone===0||s.map===4&&s.interpreterZone<2||s.map===6&&(s.hillZone===0||s.hillZone===3)||s.map===7&&s.palaceZone<3) {text('→',23*T+10,Y+7*T+22,21,'#f8ec9f');}else {text('→',23*T+10,Y+7*T+22,21,'#bbcab2');}
+}
+function drawHUD(){pixelRect(0,0,768,64,'#14243a');pixelRect(0,60,768,4,'#d5ad67');text('THE NARROW WAY',15,22,18,'#f4ce73');text('MAP '+(s.map+1)+'/9 · '+(s.map===0?cityZones[s.cityZone]:s.map===2?moralityZones[s.moralityZone]:s.map===3?gateZones[s.gateZone]:s.map===4?interpreterZones[s.interpreterZone]:s.map===6?hillZones[s.hillZone]:s.map===7?palaceZones[s.palaceZone]:s.map===8?valleyZones[s.valleyZone]:names[s.map]),17,45,12,'#e1e4cc');text(flag('cross')?'BURDEN: LIFTED':'BURDEN: HEAVY',753,22,12,flag('cross')?'#8af0ad':'#ffbfa7','right');text('TRUTHS '+truths.filter(t=>flag(t[0])).length+'  ·  STEP '+s.steps,753,45,12,'#c9d4cf','right');}
+function draw(){frame++;gateHit();battleTick();g.clearRect(0,0,768,512);drawHUD();drawWorld();if(flash>0){flash--;g.fillStyle='rgba(255,233,159,'+(flash/75)+')';g.fillRect(0,64,768,448);}requestAnimationFrame(draw)}
+function moveFrame(t){if(t-lastMove>=125){let d=press.up?[0,-1]:press.down?[0,1]:press.left?[-1,0]:press.right?[1,0]:null;if(d){walk(...d);lastMove=t;}}requestAnimationFrame(moveFrame)}
+function openMenu(which='maps'){s.unlocked=Math.min(s.unlocked,earnedStoryMax(s.flags));dialog=null;refreshDialog();menu=true;const m=$('menu');m.classList.add('visible');let html='';if(which==='maps'){
+ html='<h2>THE PILGRIM’S ROAD</h2><p class="menu-caption">Maps 1, 3, 4, 5, and 7 have connected areas. Hill Difficulty includes the three roads, the arbor, and the search for Christian’s lost roll. Palace Beautiful includes the chained lions and armor. Map 9 includes the climactic Apollyon boss battle, healing, and thanksgiving. Maps unlock only as you complete the pilgrimage. Revisit places already reached; the next chapter must be earned.</p><div class="menugrid">'+names.map((n,i)=>`<button class="map-btn" data-map="${i}" ${i>s.unlocked?'disabled':''}><strong>${i+1}. ${n}</strong><span>${i>s.unlocked?'LOCKED':i===s.map?'CURRENT MAP':'UNLOCKED'}</span></button>`).join('')+'</div>';
+ }else{
+ const unlocked=truths.filter(t=>flag(t[0]));
+ html=`<h2>THE BOOK · KNOWLEDGE OF THE TRUTH</h2><p class="menu-caption">Christian reasons from his Book. These are truths learned through dialogue, not points that earn salvation.</p><div class="statuspill">${unlocked.length}/${truths.length} TRUTHS · ${s.errors} RETRIES / HAZARDS</div><p class="menu-caption"><strong>Burden:</strong> ${flag('cross')?'Lifted at the Cross, through mercy':'Still heavy. It will fall away at the Cross, not through winning arguments.'}</p><p class="menu-caption"><strong>Current quest:</strong> ${escapeHtml(objectives())}</p>`;
+ if(s.map===0)html+=`<p class="menu-caption"><strong>Main conversations:</strong> ${cityCompleteCount()}/5 · Wife · Child · Obstinate · Pliable · Evangelist. Neighbor and Merchant are optional.</p>`;
+ if(s.map===4)html+=`<p class="menu-caption"><strong>Interpreter lessons:</strong> ${interpreterCount()}/7 · Portrait · Dust · Passion & Patience · Fire · Valiant Man · Iron Cage · Awakened Man.</p>`;
+ if(s.map===6)html+=`<p class="menu-caption"><strong>Hill Difficulty:</strong> ${hillZones[s.hillZone]}. Follow Bunyan’s order: argue, choose the true road, rest at the arbor, meet the fearful men, then return for the roll.</p>`;
+ if(s.map===7)html+=`<p class="menu-caption"><strong>Palace Beautiful:</strong> ${palaceZones[s.palaceZone]}. Pass the lions by the middle of the path, speak with Watchful and the four ladies, then behold the treasures and receive armor.</p>`;
+ if(s.map===8)html+=`<p class="menu-caption"><strong>Valley of Humiliation:</strong> ${valleyZones[s.valleyZone]}. Sword: X/K/B or touch SWORD. Shield: hold SHIFT or touch SHIELD. Your checkpoint saves automatically.</p>`;
+ html+=`<h3 style="font-size:14px;color:#f2d98b;margin:13px 0 5px">TRUTHS YOU HAVE DISCOVERED</h3>`;
+ if(!unlocked.length)html+='<p class="menu-caption">Begin by reading the Book near Christian’s home.</p>';
+ html+=unlocked.map(t=>`<div class="truth-entry"><strong>${escapeHtml(t[1])}</strong> <span>${escapeHtml(t[2])}</span><p>${escapeHtml(t[3])}</p></div>`).join('');
+ html+=`<p class="tiny">These dialogues adapt Bunyan’s story rather than reproduce his entire text. Worldly Wiseman’s proposed moral shortcut concerns justification by works, not the value of lawful, honest living.</p>`;
+ }
+html+='<div class="menu-actions"><button data-close="1">RETURN TO GAME</button><button data-new="1">NEW GAME / RESET</button></div>';m.innerHTML=html;m.querySelectorAll('[data-map]').forEach(b=>b.addEventListener('click',()=>{let i=+b.dataset.map;if(i>s.unlocked)return;s.map=i;s.cityZone=0;s.moralityZone=0;s.gateZone=0;s.interpreterZone=0;s.hillZone=0;s.palaceZone=0;s.valleyZone=0;s.battlePhase='ready';s.hp=9;s.bossHp=12;s.finished=false;flames=[];shieldHeld=false;s.x=i===0?3:1;s.y=7;s.face='right';save();closeMenu();updateHUD();show(names[i],descriptions[i]);}));m.querySelector('[data-close]').addEventListener('click',closeMenu);m.querySelector('[data-new]').addEventListener('click',()=>{if(confirm('Start a new pilgrimage? This clears your saved progress.')){s=initial();save();closeMenu();updateHUD();show('CITY OF DESTRUCTION','Start at Christian’s house and read the golden Book. Speak with his wife and child, travel through the city into the fields to meet Evangelist, then respond to Obstinate and Pliable on the pursuit road. Even good arguments do not force belief.');}});}
+function closeMenu(){menu=false;$('menu').classList.remove('visible');cv.focus()}
+$('mapsBtn').addEventListener('click',()=>menu?closeMenu():openMenu('maps'));
+$('journalBtn').addEventListener('click',()=>menu?closeMenu():openMenu('journal'));
+$('bookTouch').addEventListener('click',()=>menu?closeMenu():openMenu('journal'));
+$('actionTouch').addEventListener('click',action);
+$('swordTouch').addEventListener('click',swordAttack);
+for(const ev of ['pointerdown','pointerup','pointercancel','lostpointercapture'])$('shieldTouch').addEventListener(ev,e=>{if(ev==='pointerdown'){e.preventDefault();e.currentTarget.setPointerCapture(e.pointerId);shieldHeld=true;}else shieldHeld=false;e.currentTarget.classList.toggle('pressed',shieldHeld);});
+$('muteBtn').addEventListener('click',()=>{muted=!muted;$('muteBtn').textContent=muted?'♫ OFF':'♫ ON'});
+window.addEventListener('keydown',e=>{let k=e.key.toLowerCase();if(['arrowup','arrowdown','arrowleft','arrowright',' ','enter','1','2','3','m','j','w','a','s','d','escape','x','k','b','shift'].includes(k))e.preventDefault();if(menu){if(k==='escape'||k==='m'||k==='j')closeMenu();return;}if(dialog){if(dialog.type==='quiz'&&['1','2','3'].includes(k))choose(+k-1);else if((k===' '||k==='enter'||k==='escape')&&dialog.type==='message')cont();return;}if(k==='m')openMenu('maps');else if(k==='j')openMenu('journal');else if(['x','k','b'].includes(k))swordAttack();else if(k==='shift')shieldHeld=true;else if(k===' '||k==='enter')action();else {let d=({'arrowup':[0,-1],'w':[0,-1],'arrowdown':[0,1],'s':[0,1],'arrowleft':[-1,0],'a':[-1,0],'arrowright':[1,0],'d':[1,0]})[k];if(d){let dir=d[0]===-1?'left':d[0]===1?'right':d[1]===-1?'up':'down';press[dir]=true;if(!e.repeat)walk(...d);lastMove=performance.now();}}});
+window.addEventListener('keyup',e=>{let k=e.key.toLowerCase(),dir=({'arrowup':'up','w':'up','arrowdown':'down','s':'down','arrowleft':'left','a':'left','arrowright':'right','d':'right'})[k];if(dir)press[dir]=false;if(k==='shift')shieldHeld=false;});
+window.addEventListener('blur',()=>{Object.keys(press).forEach(k=>press[k]=false);shieldHeld=false;});
+for(let btn of document.querySelectorAll('.pad')){let xy=btn.dataset.move.split(',').map(Number),id=xy[0]===-1?'left':xy[0]===1?'right':xy[1]===-1?'up':'down';btn.addEventListener('pointerdown',e=>{e.preventDefault();btn.setPointerCapture(e.pointerId);press[id]=true;btn.classList.add('pressed');walk(...xy);lastMove=performance.now()});for(let ev of ['pointerup','pointercancel','lostpointercapture'])btn.addEventListener(ev,()=>{press[id]=false;btn.classList.remove('pressed')});}
+cv.addEventListener('click',e=>{if(menu||dialog)return;let b=cv.getBoundingClientRect(),tx=Math.floor((e.clientX-b.left)/b.width*768/32),ty=Math.floor(((e.clientY-b.top)/b.height*512-64)/32);let target=[...actors(),...objects()].find(a=>a.x===tx&&a.y===ty);if(target&&Math.abs(s.x-tx)+Math.abs(s.y-ty)<=3)target.dialogue?target.dialogue():target.fn();});
+updateHUD();draw();requestAnimationFrame(moveFrame);show(s.map===0?'CITY OF DESTRUCTION':'WELCOME BACK',s.map===0?'Christian reads the Book and fears the judgment to come. His burden weighs heavily upon him. Explore the City of Destruction, the fields beyond the wall, and the pursuit road. Start by inspecting the golden Book near Christian’s house. Warn his family, then meet Evangelist before Obstinate and Pliable pursue him.\n\nMove with arrows, WASD or the on-screen pad. Press A or Space near a character to speak.':'Your pilgrimage resumes at '+names[s.map]+'. '+descriptions[s.map]);
+})();
+</script></body></html>
